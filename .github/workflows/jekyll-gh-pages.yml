@@ -20,6 +20,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Setup GitHub Pages
+      uses: actions/configure-pages@v2
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
