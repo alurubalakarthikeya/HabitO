@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Tracker</title>
-    <link rel="stylesheet" href="frontend/css/styles.css">
+    <title>Habito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./frontend/css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Habit Tracker</h1>
-    </header>
-    <main>
-        <section id="habits">
-            <h2>Your Habits</h2>
-            <ul id="habit-list">
-                <!-- Habit items will be dynamically added here -->
+    <nav class="navBar">
+        <div class="logo">
+            <h2>Habito</h2>
+        </div>
+        <div class="navItems">
+            <i class="fa-solid fa-bars"></i>
+            <ul class="navList">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About</li>
+                <li class="nav-item">Habits</li>
+                <li class="nav-item">Profile</li>
             </ul>
-        </section>
-        <section id="add-habit">
-            <h2>Add a New Habit</h2>
-            <input type="text" id="habit-input" placeholder="Enter habit name">
-            <button id="add-habit-button">Add Habit</button>
-        </section>
-    </main>
-    <script src="frontend/js/app.js"></script>
+        </div>
+    </nav>
+    <script src="./frontend/js/app.js"></script>
 </body>
 </html>
