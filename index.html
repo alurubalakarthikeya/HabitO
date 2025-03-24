@@ -13,13 +13,28 @@
             <h2>Habito</h2>
         </div>
         <div class="navItems">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" id="menuBar" onclick="openNav()"></i>
             <ul class="navList">
                 <li class="nav-item">Home</li>
                 <li class="nav-item">About</li>
                 <li class="nav-item">Habits</li>
                 <li class="nav-item">Profile</li>
             </ul>
+            <div id="navSlide">
+                <div class="navSlideContent">
+                    <i class="fa-solid fa-xmark" id="CloseBar" onclick="closeNav()"></i>
+                    <ul class="navList">
+                        <li class="nav-item">Home</li>
+                        <li class="nav-item">About</li>
+                        <li class="nav-item">Habits</li>
+                        <li class="nav-item">Profile</li>
+                    </ul>
+                    <div class="navSlideFooter">
+                        <p>Habito &copy; 2023</p>
+                        <p>All rights reserved</p>
+                        <p>Contact: <a href="mailto:alurubalakarthikeya@gmail.com">Mail</a></p>
+                    </div>
+            </div>
         </div>
     </nav>
     <script src="./frontend/js/app.js"></script>

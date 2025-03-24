@@ -1,4 +1,3 @@
-// This file contains the JavaScript code for the frontend application, handling client-side logic and interactions.
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('habit-form');
@@ -17,3 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function openNav() {
+    document.getElementById("navSlide").style.width = "250px";
+    document.getElementById("menuBar").style.display = "none";
+    document.getElementById("closeBtn").style.display = "block";
+}
+  
+function closeNav() {
+    document.getElementById("navSlide").style.width = "0";
+    document.getElementById("menuBar").style.display = "block";
+    document.getElementById("closeBtn").style.display = "none";
+}

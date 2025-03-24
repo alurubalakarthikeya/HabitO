@@ -15,10 +15,12 @@ body {
     font-size: var(--font-size);
     margin: 0;
     padding: 0;
+    background-color: var(--black-color);
+    color: var(--white-color);
 }
 
 nav {
-    background-color: #121212e7;
+    background-color: var(--black-color);
     backdrop-filter: blur(15px);
 }
 
@@ -27,8 +29,19 @@ nav {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     color: var(--white-color);
+}
+
+.navBar .logo h2 {
+    color: var(--white-color);
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
 }
 
 .navList {
@@ -39,9 +52,54 @@ nav {
     align-items: center;
 }
 
-.navItems {
+.navList .nav-item {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.navList .nav-item:hover {
+    color: var(--blue-color);
+}
+
+#menuBar {
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+#closeBtn {
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+
+#navSlide {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--black-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.navSlideContent {
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.navSlideContent .navList {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navSlideFooter {
+    position: absolute;
+    bottom: 20px;
+    color: var(--white-color);
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -51,7 +109,62 @@ nav {
 }
 
 @media (min-width: 1100px) {
-    .navItems > i{
+    #menuBar {
         display: none;
     }
+    .navSlideContent {
+        display: none;
+    }
+}
+
+/* Button Styles */
+button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--main-font), sans-serif;
+    font-size: var(--font-size);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--blue-color);
+}
+
+/* Input Styles */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--white-color);
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-family: var(--main-font), sans-serif;
+    font-size: var(--font-size);
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--blue-color);
+    outline: none;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--white-color);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--blue-color);
 }
