@@ -106,6 +106,9 @@ nav {
     .navList {
         display: none;
     }
+    .logo > h2 {
+        font-size: 2vh;
+    }
 }
 
 @media (min-width: 1100px) {
