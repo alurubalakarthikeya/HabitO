@@ -27,3 +27,25 @@ function closeNav() {
     document.getElementById("menuBar").style.display = "block";
     document.getElementById("closeBtn").style.display = "none";
 }
+
+const grid = document.getElementById("streakGrid");
+
+  // 18 columns * 5 rows = 90 boxes
+  for (let i = 0; i < 120; i++) {
+    const box = document.createElement("div");
+    box.classList.add("streak-box");
+
+    // Simulate random intensity
+    const intensity = Math.floor(Math.random() * 6); // 0 to 5
+    if (intensity > 0) box.classList.add(`intensity-${intensity}`);
+
+    grid.appendChild(box);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".streak-box");
+    boxes.forEach(box => {
+      const randomDelay = (Math.random() * 2).toFixed(2); // between 0 and 2 seconds
+      box.style.animationDelay = `${randomDelay}s`;
+    });
+  });

@@ -22,6 +22,14 @@
  nav {
     background-color: var(--black-color);
     backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--blue-color);
+    box-shadow: 0px 1px 10px rgba(43, 177, 255, 0.6);
+    z-index: 1000;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
 }
 
 .navBar {
@@ -31,11 +39,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 20px;
+    padding: 6px 20px;
     color: var(--white-color);
+
 }
 
 .navBar .logo h2 {
+    font-size: 3vh;
     color: var(--white-color);
 }
 
@@ -45,6 +55,7 @@
 }
 
 .navList {
+    font-size: 2vh;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -59,6 +70,20 @@
 
 .navList .nav-item:hover {
     color: var(--blue-color);
+}
+
+.nav-item-2 {
+    background-color: var(--blue-color);
+    color: var(--black-color);
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
+    transition: 0.4s ease-in-out;
+}
+.nav-item-2:hover {
+    background-color: var(--black-color);
+    color: var(--blue-color);
+    cursor: pointer;
 }
 
 #menuBar {
@@ -102,6 +127,114 @@
     text-align: center;
 }
 
+.container {
+    width: 90%;
+    width: 580px;
+    height: 130px;
+    background-color: #1a1a1a;
+    border-radius: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--blue-color);
+    box-shadow: 0 0 20px rgba(34, 161, 235, 0.512);
+  }
+
+  .streak-container {
+    color: white;
+    text-align: center;
+  }
+
+  .streak-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .streak-grid {
+    display: grid;
+    grid-template-columns: repeat(28, 15px); 
+    grid-template-rows: repeat(4, 15px);   
+    grid-gap: 4px;
+    justify-content: center;
+  }
+
+  .streak-box {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    background-color: #1a1a1a;
+    transition: background-color 0.3s ease;
+  }
+
+  .streak-box {
+    animation: fadeInScale 0.5s ease forwards;
+    opacity: 0;
+  }
+  
+
+  .intensity-1 { background-color: #b2e0ff; }
+  .intensity-2 { background-color: #6ec2fa; }
+  .intensity-3 { background-color: rgb(111, 202, 255); }
+  .intensity-4 { background-color: rgb(6, 164, 255); }
+  .intensity-5 { background-color: var(--blue-color); }
+
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 90%; 
+      height: 100px; 
+      padding: 10px;
+      overflow: hidden;
+    }
+  
+    .streak-grid {
+      grid-template-columns: repeat(36, 15px); 
+      grid-template-rows: repeat(10, 15px);   
+    }
+  
+    .streak-box {
+      width: 12px;
+      height: 12px;
+    }
+  
+    .streak-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100%; 
+      padding: 5px; 
+    }
+  
+    .streak-grid {
+      grid-template-columns: repeat(10, 12px);
+      grid-template-rows: repeat(2, 12px);  
+    }
+  
+    .streak-box {
+      width: 10px; 
+      height: 10px;
+    }
+  
+    .streak-title {
+      font-size: 1rem;
+    }
+  }
+
 @media (max-width: 768px) {
     .navList {
         display: none;
@@ -114,6 +247,8 @@
         justify-content: center;
         align-items: center;
         height: 110vh;
+        gap: 50px;
+        margin-top: 200px;
     }
 
     form {
@@ -122,8 +257,8 @@
     }
 
     .home {
-        min-width: 270px;
-        max-width: 290px;
+        min-width: 280px;
+        max-width: 300px;
     }
 }
 
@@ -138,16 +273,26 @@
     form {
         min-width: 300px;
     }
+
+    .main-screen {
+        margin-top: 80px;
+    }
 }
 
 .main-screen {
-    margin-top: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 90vh;
-    margin: 20px;
     gap: 20px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
 }
 
 form {

@@ -6,14 +6,44 @@
     <title>HabitO | Habit Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logowithoutbg.png" type="image/x-icon">
 </head>
 <body>
+    <nav class="navBar">
+        <div class="logo">
+            <h2><span>Habit<img src="logowithoutbg.png" alt=""></span></h2>
+        </div>
+        <div class="navItems">
+            <i class="fa-solid fa-bars" id="menuBar" onclick="openNav()"></i>
+            <ul class="navList">
+                <li class="nav-item">Sign In</li>
+                <li class="nav-item-2">Sign Up</li>
+            </ul>
+            <div id="navSlide">
+                <div class="navSlideContent">
+                    <i class="fa-solid fa-xmark" id="CloseBar" onclick="closeNav()"></i>
+                    <ul class="navList">
+                        <li class="nav-item">Sign In</li>
+                        <li class="nav-item-2">Sign Up</li>
+                    </ul>
+                    <div class="navSlideFooter">
+                        <p>Habito &copy; 2023</p>
+                        <p>All rights reserved</p>
+                        <p>Contact: <a href="mailto:alurubalakarthikeya@gmail.com">Mail</a></p>
+                    </div>
+            </div>
+        </div>
+    </nav>
     <div class="main-screen">
         <div class="home">
-            <h1>Welcome to <span>HabitO <img src="logowithoutbg.png" alt=""></span></h1>
-            <p>Your personal habit tracker</p>
-            <p>Track your habits, stay motivated, and achieve your goals!</p>
+            <div class="content">
+                <h1>Welcome to <span>HabitO <img src="logowithoutbg.png" alt=""></span></h1>
+                <p>Your personal habit tracker</p>
+                <p>Track your habits, stay motivated, and achieve your goals!</p>
+            </div>
+            <div class="container">
+                <div class="streak-grid" id="streakGrid"></div>
+            </div>
         </div>
         <div class="form">
             <form action="">
@@ -37,13 +67,12 @@
                     <div class="btn-n">
                         <button type="submit">Register</button>
                         <p>Already have an account? <a href="login.html">Login</a></p>
-                        <p>By signing up, you agree to our <a href="#">Terms of Service</a><br> and <a href="#">Privacy Policy</a>.</p>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <br>
-    <script src="js/app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
