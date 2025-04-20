@@ -139,7 +139,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     margin: 20px;
     gap: 20px;
 }
@@ -180,6 +180,7 @@ form input[type="number"], form button {
     padding: 10px;
     border: 1px solid var(--blue-color);
     border-radius: 6px;
+    margin: 5px 0;
     box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
     background-color: var(--black-color);
     color: var(--white-color);
@@ -217,7 +218,21 @@ form p a {
     width: 100%;
 }
 
-.input-field h3 {
-    font-size: 2.5vh;
+.field h3 {
+    font-size: 3vh;
     color: var(--blue-color);
+    text-align: left;
+}
+
+span{
+    display: flex;
+    align-items: center;
+}
+
+span img {
+    position: relative;
+    top: 6px;
+    right: 6px;
+    width: 60px;
+    height: 60px;
 }
