@@ -119,3 +119,31 @@
         display: none;
     }
 }
+
+.main-screen {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    height: 95vh;
+    background-color: var(--black-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"], form button {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
