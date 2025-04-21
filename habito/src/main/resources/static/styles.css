@@ -224,9 +224,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 110vh;
         gap: 50px;
-        margin-top: 200px;
+        margin: 160px 0px;
     }
 
     form {
