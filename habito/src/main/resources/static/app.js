@@ -31,7 +31,7 @@ function closeNav() {
 const grid = document.getElementById("streakGrid");
 
   // 18 columns * 5 rows = 90 boxes
-  for (let i = 0; i < 120; i++) {
+  for (let i = 0; i < 110; i++) {
     const box = document.createElement("div");
     box.classList.add("streak-box");
 
