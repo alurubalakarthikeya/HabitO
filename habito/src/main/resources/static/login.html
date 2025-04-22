@@ -11,7 +11,7 @@
 <body>
     <nav class="navBar">
         <div class="logo">
-            <h2><span>Habit<img src="logowithoutbg.png" alt=""></span></h2>
+            <h2><span>HabitO <img src="logowithoutbg.png" alt=""></span></h2>
         </div>
         <div class="navItems">
             <i class="fa-solid fa-bars" id="menuBar" onclick="openNav()"></i>
@@ -50,19 +50,34 @@
                 <div class="input-fields">
                     <div class="input-field">
                         <label for="name">Username</label><br>
-                        <input type="text" id="name" name="username" required>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="username" required>
+                        </div>
                     </div>
+                    
                     <div class="input-field">
                         <label for="email">Email</label><br>
-                        <input type="email" id="email" name="email" required>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email" required>
+                        </div>
                     </div>
+                    
                     <div class="input-field">
                         <label for="password">Password</label><br>
-                        <input type="password" id="password" name="password" required>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" name="password" required>
+                        </div>
                     </div>
+                    
                     <div class="input-field">
                         <label for="confirmPassword">Confirm Password</label><br>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
                     </div>
                     <div class="btn-n">
                         <button type="submit">Register</button>
@@ -70,9 +85,6 @@
                     </div>
                 </div>
             </form>
-            <br>
-            <br>
-            <br>
         </div>
     </div>
     <script src="app.js"></script>
