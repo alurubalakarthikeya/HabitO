@@ -228,9 +228,10 @@
         margin: 160px 0px;
     }
 
-    form {
+    .form form {
         min-width: 250px;
         max-width: 270px;
+        margin-bottom: 60px;
     }
 
     .home {
@@ -304,7 +305,7 @@ form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="number"], form button {
-    width: 92%;
+    width: 87%;
     padding: 10px;
     border: 1px solid var(--blue-color);
     border-radius: 6px;
@@ -350,6 +351,24 @@ form p a {
     font-size: 3vh;
     color: var(--blue-color);
     text-align: left;
+}
+
+.input-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blue-color);
+    font-size: 1.5vh;
+}
+
+.input-icon input {
+    padding-left: 25px !important;
 }
 
 span{
