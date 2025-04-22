@@ -173,9 +173,9 @@
   }
   
 
-  .intensity-1 { background-color: #b2e0ff; }
-  .intensity-2 { background-color: #6ec2fa; }
-  .intensity-3 { background-color: rgb(111, 202, 255); }
+  .intensity-1 { background-color: #9fd2f5; }
+  .intensity-2 { background-color: #69c1fb; }
+  .intensity-3 { background-color: rgb(85, 169, 218); }
   .intensity-4 { background-color: rgb(6, 164, 255); }
   .intensity-5 { background-color: var(--blue-color); }
 
@@ -191,31 +191,29 @@
     }
   }
 
- 
-  @media (max-width: 768px) {
-    .container {
-      width: 100%; 
-      padding: 5px; 
-    }
-  
-    .streak-grid {
-      grid-template-columns: repeat(17, 12px);
-      grid-template-rows: repeat(1, 12px);  
-    }
-  
-    .streak-box {
-      width: 13px; 
-      height: 13px;
-    }
-  
-    .streak-title {
-      font-size: 1rem;
-    }
-  }
 
 @media (max-width: 768px) {
     .navList {
         display: none;
+    }
+    #login-btn {
+        display: block;
+    }
+    #login-btn button {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        padding: 10px 20px;
+        box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
+        border-radius: 10px;
+        transition: 0.4s ease-in-out;
+        font-family: var(--main-font);
+        font-size: 2vh;
+        border: none;
+    }
+    #login-btn button:hover {
+        background-color: var(--black-color);
+        color: var(--blue-color);
+        cursor: pointer;
     }
     .logo > h2 {
         font-size: 2.3vh;
@@ -238,10 +236,29 @@
         min-width: 280px;
         max-width: 300px;
     }
+
+    .container {
+        width: 100%; 
+        padding: 5px; 
+      }
+    
+      .streak-grid {
+        grid-template-columns: repeat(17, 12px);
+        grid-template-rows: repeat(1, 12px);  
+      }
+    
+      .streak-box {
+        width: 13px; 
+        height: 13px;
+      }
+    
 }
 
 @media (min-width: 1100px) {
     #menuBar {
+        display: none;
+    }
+    #login-btn{
         display: none;
     }
     .navSlideContent {
