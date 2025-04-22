@@ -193,9 +193,6 @@
 
 
 @media (max-width: 768px) {
-    .navList {
-        display: none;
-    }
     #login-btn {
         display: block;
     }
@@ -251,18 +248,33 @@
         width: 13px; 
         height: 13px;
       }
+
+      .basicLink {
+        display: none;
+      }
     
 }
 
 @media (min-width: 1100px) {
-    #menuBar {
-        display: none;
-    }
-    #login-btn{
-        display: none;
-    }
     .navSlideContent {
         display: none;
+    }
+
+    #login-btn button {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        padding: 10px 20px;
+        box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
+        border-radius: 20px;
+        transition: 0.4s ease-in-out;
+        font-family: var(--main-font);
+        font-size: 2vh;
+        border: none;
+    }
+    #login-btn button:hover {
+        background-color: var(--black-color);
+        color: var(--blue-color);
+        cursor: pointer;
     }
 
     form {
@@ -399,4 +411,11 @@ span img {
     right: 6px;
     width: 60px;
     height: 60px;
+}
+
+.basicLink {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 2.2vh;
+    margin: 0px 15px;
 }
