@@ -75,6 +75,7 @@ const grid = document.getElementById("streakGrid");
         `;
         document.getElementById("switchToRegister").addEventListener("click", function (e) {
             e.preventDefault();
+            buttonText.innerText = "Register";
             switchToRegister();
         });
     }
@@ -117,7 +118,8 @@ const grid = document.getElementById("streakGrid");
             </div>
         `;
         document.getElementById("switchToLogin").addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent page refresh
+            e.preventDefault();
+            buttonText.innerText = "Login";
             switchToLogin();
         });
     }
