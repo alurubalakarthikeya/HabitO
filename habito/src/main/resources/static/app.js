@@ -29,14 +29,10 @@ function closeNav() {
 }
 
 const grid = document.getElementById("streakGrid");
-
-  // 18 columns * 5 rows = 90 boxes
   for (let i = 0; i < 110; i++) {
     const box = document.createElement("div");
     box.classList.add("streak-box");
-
-    // Simulate random intensity
-    const intensity = Math.floor(Math.random() * 6); // 0 to 5
+    const intensity = Math.floor(Math.random() * 6); 
     if (intensity > 0) box.classList.add(`intensity-${intensity}`);
 
     grid.appendChild(box);
@@ -45,7 +41,10 @@ const grid = document.getElementById("streakGrid");
   document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll(".streak-box");
     boxes.forEach(box => {
-      const randomDelay = (Math.random() * 2).toFixed(2); // between 0 and 2 seconds
+      const randomDelay = (Math.random() * 2).toFixed(2); 
       box.style.animationDelay = `${randomDelay}s`;
     });
   });
+
+  const buttonLogin = document.getElementById("login-btn");
+
