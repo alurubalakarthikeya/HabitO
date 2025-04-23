@@ -86,17 +86,6 @@
     cursor: pointer;
 }
 
-#menuBar {
-    color: var(--white-color);
-    cursor: pointer;
-}
-
-#closeBtn {
-    color: var(--white-color);
-    cursor: pointer;
-    display: none;
-}
-
 #navSlide {
     position: fixed;
     top: 0;
@@ -260,6 +249,17 @@
         display: none;
     }
 
+    .navBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navItems {
+        position: relative;
+        right: 60px;
+    }
+
     #login-btn button {
         background-color: var(--blue-color);
         color: var(--white-color);
@@ -334,9 +334,10 @@ form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="number"], form button {
-    width: 87%;
+    width: 85%;
     padding: 10px;
     border: 1px solid var(--blue-color);
+    font-family: var(--main-font);
     border-radius: 6px;
     margin: 5px 0;
     box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
@@ -394,10 +395,15 @@ form p a {
     transform: translateY(-50%);
     color: var(--blue-color);
     font-size: 1.5vh;
+    transition: 0.3s;
+    pointer-events: none;
+    padding: 5px;
+    background-color: rgba(34, 161, 235, 0.512);
+    border-radius: 10px;
 }
 
 .input-icon input {
-    padding-left: 25px !important;
+    padding-left: 35px !important;
 }
 
 span{
@@ -418,4 +424,6 @@ span img {
     text-decoration: none;
     font-size: 2.2vh;
     margin: 0px 15px;
+    padding: 10px 20px;
 }
+
