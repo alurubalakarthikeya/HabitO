@@ -181,7 +181,7 @@
   }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     #login-btn {
         display: block;
     }
@@ -242,6 +242,52 @@
         display: none;
       }
     
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navItems {
+        position: relative;
+        right: 60px;
+    }
+
+    .navItems button {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        padding: 10px 20px;
+        box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
+        border-radius: 25px;
+        transition: 0.4s ease-in-out;
+        font-family: var(--main-font);
+        font-size: 2vh;
+        border: none;
+    }
+    .navItems button:hover {
+        background-color: var(--black-color);
+        color: var(--blue-color);
+        cursor: pointer;
+    }
+
+    .form form {
+        min-width: 350px;
+        max-width: 400px;
+    }
+
+    .main-screen {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .home {
+        max-width: 400px;
+    }
 }
 
 @media (min-width: 1100px) {
@@ -426,4 +472,3 @@ span img {
     margin: 0px 15px;
     padding: 10px 20px;
 }
-
