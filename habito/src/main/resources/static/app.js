@@ -146,3 +146,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+// script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    const addHabitBtn = document.querySelector(".add-habit");
+    addHabitBtn.addEventListener("click", () => {
+      alert("Redirect to Add Habit Page or Open Modal");
+    });
+  
+    const calendarOptions = document.querySelectorAll(".calendar-options span");
+    calendarOptions.forEach(option => {
+      option.addEventListener("click", () => {
+        calendarOptions.forEach(o => o.classList.remove("selected"));
+        option.classList.add("selected");
+        // You can add logic to update the calendar based on selected option
+      });
+    });
+  });
+  

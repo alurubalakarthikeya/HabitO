@@ -1,45 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HabitO</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-    <link rel="stylesheet" href="/habito/src/main/resources/static/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitO Dashboard</title>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-    <nav class="navBar">
-        <div class="logo">
-            <h2>HabitO</h2>
+  <div class="container">
+    <header class="top-bar">
+      <div class="logo">HabitO</div>
+      <div class="top-right">
+        <div class="bell-icon">🔔</div>
+        <div class="date">April 24, 2024</div>
+      </div>
+    </header>
+
+    <section class="greeting-section">
+      <h1>Good morning, Alex!</h1>
+      <div class="quick-stats">
+        <div class="stat-box">
+          <div class="icon">💧</div>
+          <div><strong>10 day</strong><br /><span>streak</span></div>
         </div>
-        <div class="navItems">
-            <i class="fa-solid fa-bars" id="menuBar" onclick="openNav()"></i>
-            <ul class="navList">
-                <li class="nav-item">Home</li>
-                <li class="nav-item">About</li>
-                <li class="nav-item">Habits</li>
-                <li class="nav-item">Profile</li>
-            </ul>
-            <div id="navSlide">
-                <div class="navSlideContent">
-                    <i class="fa-solid fa-xmark" id="CloseBar" onclick="closeNav()"></i>
-                    <ul class="navList">
-                        <li class="nav-item">Home</li>
-                        <li class="nav-item">About</li>
-                        <li class="nav-item">Habits</li>
-                        <li class="nav-item">Profile</li>
-                    </ul>
-                    <div class="navSlideFooter">
-                        <p>Habito &copy; 2023</p>
-                        <p>All rights reserved</p>
-                        <p>Contact: <a href="mailto:alurubalakarthikeya@gmail.com">Mail</a></p>
-                    </div>
+        <div class="stat-box">
+          <div class="icon">✔️</div>
+          <div><strong>32, habits completed</strong><br /><span>do what it does.</span></div>
+        </div>
+        <button class="add-habit">+ Add Habit</button>
+      </div>
+      <p class="quote">Don't watch the clock, do what it does. Keep going.</p>
+    </section>
+
+    <section class="main-content">
+      <div class="left-column">
+        <div class="habit-dashboard">
+          <h2>Habit Dashboard</h2>
+          <div class="habits">
+            <div class="habit-card">
+              <h3>Morning Run</h3>
+              <p>5 h 20 m left</p>
+              <a href="#">Mark complete</a>
             </div>
+            <div class="habit-card">
+              <h3>Learn Spanish</h3>
+              <p>5 h 30 m</p>
+              <a href="#">Mark complete</a>
+            </div>
+            <div class="habit-card">
+              <h3>Read Book</h3>
+              <p>Mased</p>
+              <a href="#">Completed</a>
+            </div>
+          </div>
         </div>
-    </nav>
-    <div class="home">
-        <h1></h1>
-    </div>
-    <script src="habito/src/main/resources/static/js/app.js"></script>
+
+        <div class="calendar-view">
+          <h2>Calendar View</h2>
+          <div class="calendar-placeholder">[Calendar UI here]</div>
+          <div class="calendar-options">
+            <span>Group</span>
+            <span class="selected">Week</span>
+            <span>Month</span>
+          </div>
+        </div>
+
+        <div class="social-challenges">
+          <h2>Social & Challenges</h2>
+          <div class="challenge-user">
+            <img src="https://via.placeholder.com/40" alt="Alex" />
+            <div>
+              <p><strong>Alex</strong></p>
+              <p>3 y · 8 (58)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="analytics">
+          <h2>Analytics & Stats</h2>
+          <div class="analytics-box">
+            <p>Last 7 Days</p>
+            <div class="analytics-graph">📈</div>
+            <strong>80%</strong>
+          </div>
+        </div>
+
+        <div class="top-habits">
+          <h2>Top Habits</h2>
+          <div class="top-habit">Read Book <div class="bar bar-1"></div></div>
+          <div class="top-habit">Morning Run <div class="bar bar-2"></div></div>
+          <div class="top-habit">Meditate <div class="bar bar-3"></div></div>
+        </div>
+
+        <div class="social-links">
+          <h2>Social & Challenges</h2>
+          <div class="social-link">30-Day Coding <a href="#">Join</a></div>
+          <div class="social-link">Read Daily <a href="#">Join</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
