@@ -4,28 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HabitO Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <div class="container">
     <header class="top-bar">
-      <div class="logo">HabitO</div>
+      <div class="logo">Habit<span class="blue">O</span></div>
       <div class="top-right">
-        <div class="bell-icon">🔔</div>
+        <i class="fas fa-bell blue"></i>
         <div class="date">April 24, 2024</div>
       </div>
     </header>
 
     <section class="greeting-section">
-      <h1>Good morning, Alex!</h1>
+      <h1>Good morning, Carty!</h1>
       <div class="quick-stats">
         <div class="stat-box">
           <div class="icon">💧</div>
-          <div><strong>10 day</strong><br /><span>streak</span></div>
+          <div>
+            <strong>10 day</strong><br />
+            <span>streak</span>
+          </div>
         </div>
         <div class="stat-box">
           <div class="icon">✔️</div>
-          <div><strong>32, habits completed</strong><br /><span>do what it does.</span></div>
+          <div>
+            <strong>32 habits</strong><br />
+            <span>do what it does.</span>
+          </div>
         </div>
         <button class="add-habit">+ Add Habit</button>
       </div>
@@ -44,33 +51,52 @@
             </div>
             <div class="habit-card">
               <h3>Learn Spanish</h3>
-              <p>5 h 30 m</p>
+              <p>5 h 30 m left</p>
               <a href="#">Mark complete</a>
             </div>
             <div class="habit-card">
               <h3>Read Book</h3>
-              <p>Mased</p>
+              <p>Completed</p>
               <a href="#">Completed</a>
             </div>
           </div>
         </div>
 
-        <div class="calendar-view">
-          <h2>Calendar View</h2>
-          <div class="calendar-placeholder">[Calendar UI here]</div>
-          <div class="calendar-options">
-            <span>Group</span>
-            <span class="selected">Week</span>
-            <span>Month</span>
+        <div class="calendar-card">
+          <h3>Calendar View</h3>
+          <div class="calendar-header">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          </div>
+          <div class="calendar">
+            <div class="active"></div><div></div><div class="active light"></div><div class="active"></div><div></div><div></div><div></div>
+            <div></div><div class="active"></div><div class="active"></div><div></div><div class="active light"></div><div></div><div></div>
+            <div class="active"></div><div class="active light"></div><div class="active"></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div class="active light"></div><div></div><div class="active"></div><div></div><div></div><div></div>
+          </div>
+          <div class="calendar-footer">
+            <div class="calendar-right">
+              <p class="calendar-label">Cau</p>
+              <div class="calendar-preview">
+                <div class="active light"></div><div class="active"></div><div class="active light"></div>
+                <div></div><div></div><div class="active"></div><div></div>
+              </div>
+            </div>
+            <div class="calendar-group">
+              <span class="group-label">Group</span>
+              <span class="group-option active">Week</span>
+              <span class="dot">•</span>
+              <span class="group-option">Month</span>
+            </div>
           </div>
         </div>
 
         <div class="social-challenges">
           <h2>Social & Challenges</h2>
           <div class="challenge-user">
-            <img src="https://via.placeholder.com/40" alt="Alex" />
+            <img src="https://via.placeholder.com/40" alt="Carty" />
             <div>
-              <p><strong>Alex</strong></p>
+              <p><strong>Carty</strong></p>
               <p>3 y · 8 (58)</p>
             </div>
           </div>
