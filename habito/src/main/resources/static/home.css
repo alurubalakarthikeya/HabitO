@@ -23,9 +23,10 @@ body {
   background-color: #131313;
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
   max-width: 1400px;
   overflow-x: hidden;
+  border: 1.5px solid rgb(91, 91, 91);
 }
 
 .top-bar {
