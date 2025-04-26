@@ -162,11 +162,11 @@
   }
   
 
-  .intensity-1 { background-color: #9fd2f5; }
-  .intensity-2 { background-color: #69c1fb; }
-  .intensity-3 { background-color: rgb(85, 169, 218); }
-  .intensity-4 { background-color: rgb(6, 164, 255); }
-  .intensity-5 { background-color: var(--blue-color); }
+  .intensity-1 { background-color: #9fd2f5; box-shadow: 0 0 10px #9fd2f5; }
+  .intensity-2 { background-color: #69c1fb; box-shadow: 0 0 10px #69c1fb; }
+  .intensity-3 { background-color: rgb(85, 169, 218); box-shadow: 0 0 10px rgb(85, 169, 218); }
+  .intensity-4 { background-color: rgb(6, 164, 255); box-shadow: 0 0 10px rgb(6, 164, 255); }
+  .intensity-5 { background-color: var(--blue-color); box-shadow: 0 0 10px var(--blue-color); }
 
 
   @keyframes fadeInScale {
@@ -241,7 +241,9 @@
       .basicLink {
         display: none;
       }
-    
+      .navItems {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -354,7 +356,7 @@ form {
     background-color: var(--black-color);
     padding: 30px;
     border: 1.5px solid var(--blue-color);
-    box-shadow: 0px 1px 10px rgba(43, 177, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(43, 177, 255, 0.8);
     border-radius: 20px;
 }
 
@@ -472,3 +474,22 @@ span img {
     margin: 0px 15px;
     padding: 10px 20px;
 }
+
+::-webkit-scrollbar-track {
+    background: var(--white-color); 
+    border-radius: 13px;
+    border: 1px solid var(--blue-color);
+    box-shadow: 8px 0px 14px rgba(10, 125, 115, 0.95);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue-color); 
+    border-radius: 10px; 
+    border: 2px solid var(--white-color); 
+    box-shadow: 8px 0px 14px rgba(10, 125, 115, 0.95);
+  
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-color); 
+  }

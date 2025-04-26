@@ -1,0 +1,220 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+  }
+  
+  body {
+    background-color: #0f0f0f;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #131313;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  
+  .greeting-section h1 {
+    font-size: 2.2rem;
+    margin: 20px 0;
+  }
+  
+  .quick-stats {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .stat-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  .stat-box .icon {
+    font-size: 1.4rem;
+    color: #00aaff;
+  }
+  
+  .add-habit {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #00aaff;
+    color: #00aaff;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .add-habit:hover {
+    background-color: #00aaff;
+    color: #000;
+  }
+  
+  .quote {
+    margin-top: 10px;
+    color: #777;
+  }
+  
+  .main-content {
+    display: flex;
+    margin-top: 30px;
+    gap: 40px;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1;
+  }
+  
+  .habit-dashboard,
+  .calendar-view,
+  .social-challenges,
+  .analytics,
+  .top-habits,
+  .social-links {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .habit-dashboard h2,
+  .calendar-view h2,
+  .analytics h2,
+  .top-habits h2,
+  .social-links h2,
+  .social-challenges h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .habits {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .habit-card {
+    background-color: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 12px;
+    width: 30%;
+  }
+  
+  .habit-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .habit-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #00aaff;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .calendar-placeholder {
+    height: 150px;
+    background-color: #111;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-options span {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .calendar-options .selected {
+    color: #00aaff;
+  }
+  
+  .challenge-user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .challenge-user img {
+    border-radius: 50%;
+  }
+  
+  .analytics-box {
+    text-align: center;
+  }
+  
+  .analytics-box .analytics-graph {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  .top-habit {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .bar {
+    height: 6px;
+    background-color: #00aaff;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+  
+  .bar-1 {
+    width: 90%;
+  }
+  
+  .bar-2 {
+    width: 75%;
+  }
+  
+  .bar-3 {
+    width: 60%;
+  }
+  
+  .social-link {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .social-link a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
