@@ -162,11 +162,11 @@
   }
   
 
-  .intensity-1 { background-color: #9fd2f5; box-shadow: 0 0 10px #9fd2f5; }
-  .intensity-2 { background-color: #69c1fb; box-shadow: 0 0 10px #69c1fb; }
-  .intensity-3 { background-color: rgb(85, 169, 218); box-shadow: 0 0 10px rgb(85, 169, 218); }
-  .intensity-4 { background-color: rgb(6, 164, 255); box-shadow: 0 0 10px rgb(6, 164, 255); }
-  .intensity-5 { background-color: var(--blue-color); box-shadow: 0 0 10px var(--blue-color); }
+  .intensity-1 { background-color: #9fd2f5; box-shadow: 0 0 3px #9fd2f5; }
+  .intensity-2 { background-color: #69c1fb; box-shadow: 0 0 3px #69c1fb; }
+  .intensity-3 { background-color: rgb(85, 169, 218); box-shadow: 0 0 3px rgb(85, 169, 218); }
+  .intensity-4 { background-color: rgb(6, 164, 255); box-shadow: 0 0 3px rgb(6, 164, 255); }
+  .intensity-5 { background-color: var(--blue-color); box-shadow: 0 0 3px var(--blue-color); }
 
 
   @keyframes fadeInScale {
