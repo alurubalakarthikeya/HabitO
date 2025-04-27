@@ -182,9 +182,6 @@
 
 
 @media (max-width: 767px) {
-    #login-btn {
-        display: block;
-    }
     #login-btn button {
         background-color: var(--blue-color);
         color: var(--white-color);
@@ -241,7 +238,7 @@
       .basicLink {
         display: none;
       }
-      .navItems {
+      .navItems > .basicLink {
         display: none;
     }
 }
