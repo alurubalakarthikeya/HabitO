@@ -18,21 +18,12 @@ body {
   color: #00aaff;
 }
 
-.container {
-  margin: auto;
-  background-color: #131313;
-  border-radius: 16px;
-  padding: 40px;
-  margin-top: 10px;
-  max-width: 1400px;
-  overflow-x: hidden;
-  border: 1.5px solid rgb(91, 91, 91);
-}
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
 .logo {
@@ -238,11 +229,12 @@ body {
   }
 
   .quick-stats{
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .greeting-section {
-    margin: 120px 0;
+    margin: 10px 0;
+    padding: 45px;
   }
 }
 
