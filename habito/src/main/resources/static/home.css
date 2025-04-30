@@ -221,7 +221,7 @@ body {
 @media (max-width: 900px) {
   .main-content {
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
   }
 
   .top-bar {
@@ -232,9 +232,16 @@ body {
     justify-content: center;
   }
 
+  .stat-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
   .greeting-section {
     margin: 10px 0;
-    padding: 45px;
+    padding: 20px;
   }
 }
 
