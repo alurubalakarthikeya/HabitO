@@ -493,3 +493,22 @@ span img {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--blue-color); 
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: #00aaff;
+    font-size: 1.5rem;
+  }
+
+  .socials a {
+    color: #00aaff;
+    text-decoration: none;
+  }
