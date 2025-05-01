@@ -165,3 +165,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+
+  const calendar = document.getElementById("calendar");
+
+  months.forEach(month => {
+    const monthBlock = document.createElement("div");
+    monthBlock.className = "month-block";
+
+    const title = document.createElement("h3");
+    title.textContent = month;
+    monthBlock.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "calendar-grid";
+
+    for (let i = 1; i <= 30; i++) {
+      const day = document.createElement("div");
+      day.className = "calendar-day";
+
+      // randomly fill 40-60% of days
+      if (Math.random() < 0.5) {
+        day.classList.add("filled");
+      }
+
+      grid.appendChild(day);
+    }
+
+    monthBlock.appendChild(grid);
+    calendar.appendChild(monthBlock);
+  });
