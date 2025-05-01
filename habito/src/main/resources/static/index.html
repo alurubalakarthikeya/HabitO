@@ -3,140 +3,270 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HabitO Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-  <link rel="stylesheet" href="home.css" />
+  <title>HabitO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #00BFFF;
+      --bg-dark: #0d0d0d;
+      --card-dark: #121212;
+      --text-light: #f5f5f5;
+      --text-muted: #aaa;
+      --font-main: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-main);
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .greeting {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .top-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .stats, .add-btn {
+      flex: 1;
+      min-width: 280px;
+      background: var(--card-dark);
+      border: 1px solid var(--blue);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .stat-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .stat-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-icon {
+      font-size: 1.5rem;
+      color: var(--blue);
+    }
+
+    .stat-text .big {
+      font-weight: bold;
+    }
+
+    .add-btn button {
+      width: 100%;
+      padding: 1rem;
+      background: transparent;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .quote {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      background: var(--card-dark);
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .habit-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .habit-card {
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 200px;
+    }
+
+    .habit-card h3 {
+      font-size: 1.1rem;
+    }
+
+    .mark-link {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .calendar, .analytics, .top-habits, .challenges {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+      gap: 2px;
+      max-width: 100%;
+    }
+
+    .day-square {
+      width: 12px;
+      height: 12px;
+      background-color: #2a2a2a;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-grid > div {
+      flex: 1;
+      min-width: 250px;
+    }
+  </style>
 </head>
 <body>
-    <header class="top-bar">
-      <div class="logo">Habit<span class="blue">O</span></div>
-      <div class="top-right">
-        <i class="fa-solid fa-user-tie blue"></i>
-        <i class="fas fa-bell blue"></i>
-        <div class="date">April 30, 2024</div>
+  <div class="container">
+    <header>
+      <div class="title">HabitO</div>
+      <div class="date">
+        <span>🔔</span>
+        <span>April 24, 2024</span>
       </div>
     </header>
 
-    <section class="greeting-section">
-      <div class="leftHead">
-        <h1>Good morning, <span class="blue">Carty</span>!</h1>
-      <div class="quick-stats">
-        <div class="stat-box">
-          <div class="icon"><i class="fa-solid fa-fire blue"></i></div>
-          <div>
-            <strong>10 day</strong><br />
-            <span>streak</span>
-          </div>
-        </div>
-        <div class="stat-box">
-          <div class="icon"><i class="fa-solid fa-list-check blue"></i></div>
-          <div>
-            <strong>32 habits</strong><br />
-            <span>on way</span>
-          </div>
-        </div>
-        <div class="stat-box">
-          <div class="icon"><i class="fa-solid fa-check blue"></i></div>
-          <div>
-            <strong>3 habits</strong><br />
-            <span>done.</span>
-          </div>
-        </div>
-      </div><br><br><button class="add-habit">+ Add Habit</button><br><br>
-      <p class="quote">Don't watch the clock, do what it does. Keep going.</p>
-      </div>
-      <div class="rightHead">
-        <div class="habit-dashboard">
-          <h2>Habit Dashboard</h2>
-          <div class="habits">
-            <div class="habit-card">
-              <h3>Morning Run</h3>
-              <p>5 h 20 m left</p>
-              <a href="#">Mark complete</a>
-            </div>
-            <div class="habit-card">
-              <h3>Learn Spanish</h3>
-              <p>5 h 30 m left</p>
-              <a href="#">Mark complete</a>
-            </div>
-            <div class="habit-card">
-              <h3>Read Book</h3>
-              <p>Completed</p>
-              <a href="#">Completed</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="greeting">Good morning, Alex!</div>
 
-    <section class="main-content">
-      <div class="left-column">
-
-        <div class="calendar-card">
-          <h3>Calendar View</h3>
-          <div class="calendar-header">
-            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
-          </div>
-          <div class="calendar">
-            <div class="active"></div><div></div><div class="active light"></div><div class="active"></div><div></div><div></div><div></div>
-            <div></div><div class="active"></div><div class="active"></div><div></div><div class="active light"></div><div></div><div></div>
-            <div class="active"></div><div class="active light"></div><div class="active"></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div class="active light"></div><div></div><div class="active"></div><div></div><div></div><div></div>
-          </div>
-          <div class="calendar-footer">
-            <div class="calendar-right">
-              <p class="calendar-label">Cau</p>
-              <div class="calendar-preview">
-                <div class="active light"></div><div class="active"></div><div class="active light"></div>
-                <div></div><div></div><div class="active"></div><div></div>
-              </div>
-            </div>
-            <div class="calendar-group">
-              <span class="group-label">Group</span>
-              <span class="group-option">Week</span>
-              <span class="dot">•</span>
-              <span class="group-option active">Month</span>
-            </div>
+    <div class="top-row">
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-icon">🔥</div>
+          <div class="stat-text">
+            <div class="big">10 day</div>
+            <div class="small">streak</div>
           </div>
         </div>
-
-        <div class="social-challenges">
-          <h2>Social & Challenges</h2>
-          <div class="challenge-user">
-            <img src="https://via.placeholder.com/40" alt="Carty" />
-            <div>
-              <p><strong>Carty</strong></p>
-              <p>3 y · 8 (58)</p>
-            </div>
+        <div class="stat-item">
+          <div class="stat-icon">✔️</div>
+          <div class="stat-text">
+            <div class="big">32, habits completed</div>
+            <div class="small">do what it does.</div>
           </div>
         </div>
       </div>
 
-      <div class="right-column">
-        <div class="analytics">
-          <h2>Analytics & Stats</h2>
-          <div class="analytics-box">
-            <p>Last 7 Days</p>
-            <div class="analytics-graph">📈</div>
-            <strong>80%</strong>
-          </div>
-        </div>
+      <div class="add-btn">
+        <button>+ Add Habit</button>
+      </div>
+    </div>
 
-        <div class="top-habits">
-          <h2>Top Habits</h2>
-          <div class="top-habit">Read Book <div class="bar bar-1"></div></div>
-          <div class="top-habit">Morning Run <div class="bar bar-2"></div></div>
-          <div class="top-habit">Meditate <div class="bar bar-3"></div></div>
-        </div>
+    <div class="quote">
+      <p><strong>Don't watch the clock,</strong> do what it does. Keep going.</p>
+    </div>
 
-        <div class="social-links">
-          <h2>Social & Challenges</h2>
-          <div class="social-link">30-Day Coding <a href="#">Join</a></div>
-          <div class="social-link">Read Daily <a href="#">Join</a></div>
+    <div class="section">
+      <h2>Habit Dashboard</h2>
+      <div class="habit-grid">
+        <div class="habit-card">
+          <h3>Morning Run</h3>
+          <p>5 h 20 m left</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <h3>Learn Spanish</h3>
+          <p>5 h 30 m</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <h3>Read Book</h3>
+          <p class="mark-link">Mased</p>
+          <span style="font-size: 0.8rem; background: var(--blue); color: black; padding: 2px 5px; border-radius: 5px; display: inline-block;">Completed</span>
         </div>
       </div>
-    </section>
-  <script src="script.js"></script>
+    </div>
+
+    <div class="footer-grid">
+      <div class="section calendar">
+        <h2>Calendar View</h2>
+        <div class="calendar-grid">
+          <!-- Dummy 70 squares -->
+          <div class="day-square"></div>
+          <div class="day-square" style="background:#0099cc;"></div>
+          <div class="day-square" style="background:#00ccff;"></div>
+          <div class="day-square" style="background:#00e6ff;"></div>
+          <!-- Add more as needed -->
+        </div>
+      </div>
+
+      <div class="section analytics">
+        <h2>Analytics & Stats</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Last 7 Days</p>
+        <h3 style="color: var(--blue); font-size: 1.5rem;">80%</h3>
+      </div>
+
+      <div class="section top-habits">
+        <h2>Top Habits</h2>
+        <p>Read Book</p>
+        <p>Morning Run</p>
+        <p>Meditate</p>
+      </div>
+
+      <div class="section challenges">
+        <h2>Social & Challenges</h2>
+        <p>30-Day Coding <a href="#" class="mark-link">Join</a></p>
+        <p>Read Daily <a href="#" class="mark-link">Join</a></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
