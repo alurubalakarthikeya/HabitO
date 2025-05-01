@@ -22,10 +22,13 @@
  nav {
     background-color: var(--black-color);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--blue-color);
-    box-shadow: 0px 1px 10px rgba(43, 177, 255, 0.6);
+    border-bottom: 1px solid rgb(70, 70, 70);
     z-index: 1000;
 }
+
+.blue {
+    color: #00aaff;
+  }
 
 .logo img {
     width: 40px;
@@ -35,13 +38,12 @@
 .navBar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 99%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 6px 20px;
     color: var(--white-color);
-
 }
 
 .navBar .logo h2 {
