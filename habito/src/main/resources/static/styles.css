@@ -378,6 +378,18 @@ form {
     width: 100%;
 }
 
+.socials > a {
+    text-decoration: none;
+    color: var(--blue-color);
+    font-size: 3vh;
+    margin: 0px 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.socials > a:hover {
+    filter: drop-shadow(0px 0px 3px var(--blue-color));
+    transform: translateY(-4px);
+}
 
 form input[type="text"],
 form input[type="email"],
