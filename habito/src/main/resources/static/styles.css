@@ -348,7 +348,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 80px;
 }
 
 form {
@@ -510,7 +509,7 @@ span img {
   .content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
 
   .socials {
