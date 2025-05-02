@@ -331,7 +331,8 @@
     }
 
     .main-screen {
-        margin-top: 80px;
+        margin-top: 70px;
+        gap: 80px;
     }
 }
 
@@ -340,7 +341,6 @@
     justify-content: space-around;
     align-items: center;
     height: 90vh;
-    gap: 80px;
 }
 
 .home {
@@ -509,7 +509,7 @@ span img {
   .content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
   }
 
   .socials {
