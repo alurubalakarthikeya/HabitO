@@ -204,10 +204,11 @@
         font-size: 2.3vh;
     }
     .main-screen {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 150px;
         margin: 160px 0px;
     }
 
@@ -339,7 +340,7 @@
     justify-content: space-around;
     align-items: center;
     height: 90vh;
-    gap: 20px;
+    gap: 80px;
 }
 
 .home {
@@ -347,7 +348,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 40px;
+    gap: 80px;
 }
 
 form {
