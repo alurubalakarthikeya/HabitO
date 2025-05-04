@@ -5,213 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HabitO</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #00BFFF;
-      --bg-dark: #0d0d0d;
-      --card-dark: #121212;
-      --text-light: #f5f5f5;
-      --text-muted: #aaa;
-      --font-main: 'Montserrat', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: var(--font-main);
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      gap: 2rem;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .title {
-      font-size: 1.5rem;
-    }
-
-    .date {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .greeting {
-      font-size: 2rem;
-      font-weight: 600;
-    }
-
-    .top-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .stats, .add-btn {
-      flex: 1;
-      min-width: 280px;
-      background: var(--card-dark);
-      border: 1px solid var(--blue);
-      border-radius: 10px;
-      padding: 1rem;
-    }
-
-    .stat-item {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .stat-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .stat-icon {
-      font-size: 1.5rem;
-      color: var(--blue);
-    }
-
-    .stat-text .big {
-      font-weight: bold;
-    }
-
-    .add-btn button {
-      width: 100%;
-      padding: 1rem;
-      background: transparent;
-      border: 1px solid var(--blue);
-      color: var(--blue);
-      font-weight: 600;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .quote {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .section {
-      background: var(--card-dark);
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 1rem;
-    }
-
-    .section h2 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .habit-grid {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .habit-card {
-      background: #1a1a1a;
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 200px;
-    }
-
-    .habit-card h3 {
-      font-size: 1.1rem;
-    }
-
-    .mark-link {
-      color: var(--blue);
-      text-decoration: none;
-      font-size: 0.85rem;
-    }
-
-    .calendar, .analytics, .top-habits, .challenges {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
-      gap: 2px;
-      max-width: 100%;
-    }
-
-    .day-square {
-      width: 12px;
-      height: 12px;
-      background-color: #2a2a2a;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-grid > div {
-      flex: 1;
-      min-width: 250px;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="title">HabitO</div>
+      <div class="title">Habit<span class="blue">O</span></div>
       <div class="date">
-        <span>🔔</span>
-        <span>April 24, 2024</span>
+        <span><i class="fa-solid fa-user-tie blue"></i></span>
+        <span><i class="fa-solid fa-bell blue"></i></span>
+        <span>May 4, 2024</span>
       </div>
     </header>
 
-    <div class="greeting">Good morning, Alex!</div>
+    <div class="greeting">Good morning, <span class="blue">Carty</span>!</div>
 
     <div class="top-row">
       <div class="stats">
         <div class="stat-item">
-          <div class="stat-icon">🔥</div>
+          <div class="stat-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
           <div class="stat-text">
             <div class="big">10 day</div>
             <div class="small">streak</div>
           </div>
         </div>
+        <div class="stat-item progress-card">
+          <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="stat-text">
+            <div class="big">Level 3</div>
+            <div class="small">80% left</div>
+          </div>
+        </div>
         <div class="stat-item">
-          <div class="stat-icon">✔️</div>
+          <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
           <div class="stat-text">
             <div class="big">32, habits completed</div>
             <div class="small">do what it does.</div>
           </div>
         </div>
-      </div>
-
-      <div class="add-btn">
-        <button>+ Add Habit</button>
-      </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="stat-text">
+            <div class="big">“Push yourself.”</div>
+            <div class="small">Motivation of the Day</div>
+          </div>
+        </div>  
+      </div>  
     </div>
 
     <div class="quote">
-      <p><strong>Don't watch the clock,</strong> do what it does. Keep going.</p>
+      <p><strong>Don't watch the clock</strong>. Keep going.</p>
     </div>
 
     <div class="section">
@@ -231,6 +75,16 @@
           <h3>Read Book</h3>
           <p class="mark-link">Mased</p>
           <span style="font-size: 0.8rem; background: var(--blue); color: black; padding: 2px 5px; border-radius: 5px; display: inline-block;">Completed</span>
+        </div>
+        <div class="habit-card">
+          <h3>Morning Run</h3>
+          <p>5 h 20 m left</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <h3>Learn Spanish</h3>
+          <p>5 h 30 m</p>
+          <a class="mark-link" href="#">Mark complete</a>
         </div>
       </div>
     </div>
