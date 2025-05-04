@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --primary-color: #008080;
-  --black-color: #121212;
-  --blue-color: rgb(43, 177, 255);
-  --white-color: #F5F5F5;
-  --main-font: "Montserrat", sans-serif;
-  --secondary-font: "Inter", sans-serif;
-  --font-size: 2.5vh;
+  --blue: #00BFFF;
+  --bg-dark: #0d0d0d;
+  --card-dark: #121212;
+  --text-light: #f5f5f5;
+  --text-muted: #aaa;
+  --font-main: 'Montserrat', sans-serif;
 }
 
 * {
@@ -17,283 +17,263 @@
 }
 
 body {
-  background-color: #0D0D0D;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  padding: 2rem;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
 }
 
-/* Top Header */
-.top-header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
 }
 
-.app-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.date-section {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #e0e0e0;
-}
-
-.date-section .icon {
-  margin-right: 0.5rem;
-}
-
-/* Greeting Section */
-.greeting-section h1 {
-  font-size: 2.5rem;
+.title {
+  font-size: 3vh;
   font-weight: 600;
 }
 
-/* Stats Section */
-.stats-section {
+.blue {
+  color: #0099cc;
+}
+
+.date {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
+  gap: 1rem;
+  font-size: 1.8vh;
+  color: var(--text-muted);
+}
+
+.greeting {
+  margin-top: 60px;
+  font-size: 6vh;
+  font-weight: 600;
+}
+
+.top-row {
+  display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.stats-box {
-  display: flex;
-  background-color: #121212;
-  border: 1px solid #00BFFF;
-  border-radius: 10px;
-  padding: 1.5rem;
-  gap: 2rem;
+.stats, .add-btn {
   flex: 1;
-  min-width: 300px;
-}
-
-.stat {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.stat .icon {
-  font-size: 1.5rem;
-  color: #00BFFF;
-}
-
-.stat .value {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.stat .label {
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Add Habit Button */
-.add-habit-box {
-  min-width: 200px;
-}
-
-.add-habit-btn {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  background-color: transparent;
-  color: #00BFFF;
-  border: 1px solid #00BFFF;
+  min-width: 280px;
+  background: var(--card-dark);
+  border: 1px solid rgb(71, 71, 71);
   border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 1rem;
 }
 
-.add-habit-btn:hover {
-  background-color: #00BFFF;
-  color: #000;
-}
-
-/* Quote Section */
-.quote-section {
-  margin-top: 2rem;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.quote-section strong {
-  color: white;
-}
-
-/* Habit Dashboard */
-.habit-dashboard {
-  margin-top: 2.5rem;
-}
-
-.habit-dashboard h2 {
-  font-size: 1.4rem;
+.stat-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.habit-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.stat-item:last-child {
+  margin-bottom: 0;
 }
 
-.habit-card {
-  background-color: #121212;
+.stat-icon {
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+.stat-text .big {
+  font-weight: bold;
+}
+
+.add-btn button {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quote {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.section {
+  background: var(--card-dark);
   border: 1px solid #333;
   border-radius: 10px;
   padding: 1rem;
-  width: 200px;
-  min-height: 120px;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.habit-grid {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.habit-card {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 220px;
 }
 
 .habit-card h3 {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.habit-card p {
-  font-size: 0.9rem;
-  color: #bbb;
 }
 
 .mark-link {
-  color: #00BFFF;
-  font-size: 0.9rem;
+  color: var(--blue);
   text-decoration: none;
-  margin-top: 0.5rem;
+  font-size: 0.85rem;
 }
 
-.mark-link:hover {
-  text-decoration: underline;
-}
-
-.habit-card .marked {
-  color: #00BFFF;
-}
-
-.completed {
-  background-color: #00BFFF;
-  color: black;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 0.3rem;
-}
-
-.calendar-heatmap {
+.calendar, .analytics, .top-habits, .challenges {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min-content;
-  grid-template-rows: repeat(7, 12px);
-  gap: 4px;
-  overflow-x: auto;
-  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 2px;
   max-width: 100%;
 }
 
-/* Make each column contain 1 day square */
-.calendar-heatmap .day-square {
+.day-square {
   width: 12px;
   height: 12px;
-  border-radius: 2px;
   background-color: #2a2a2a;
-  flex-shrink: 0;
-  transition: background-color 0.3s ease;
 }
 
-.day-square[data-level='1'] { background-color: #004466; }
-.day-square[data-level='2'] { background-color: #006699; }
-.day-square[data-level='3'] { background-color: #0099cc; }
-.day-square[data-level='4'] { background-color: #00ccff; }
-.day-square[data-level='5'] { background-color: #00e6ff; }
-
-.day-square:hover {
-  outline: 1px solid #00BFFF;
-  cursor: pointer;
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.calendar-section {
+.footer-grid > div {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px;
 }
 
-.calendar-section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+@media (max-width: 768px) {
+  .habit-card {
+    width: 100%;
+  }
 }
 
-.calendar-card {
-  background-color: #121212;
-  border: 1px solid #333;
+.progress-card .progress-bar {
+  background-color: #333;
   border-radius: 10px;
-  width: 100%;
-  padding: 1rem;
-  box-shadow: 0 0 8px rgba(0, 191, 255, 0.05);
-}
-
-/* Responsive heatmap styles (keep this if not already included) */
-.calendar-heatmap {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min-content;
-  grid-template-rows: repeat(7, 12px);
-  gap: 4px;
-  overflow-x: auto;
-  max-width: 100%;
-  padding-bottom: 1rem;
-}
-
-.graph-box {
-  background-color: #121212;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
-
-.top-habits-header {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.top-habits .habit-row {
-  margin-bottom: 1rem;
-}
-
-.top-habits .habit-row span {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.progress-track {
-  background-color: #2a2a2a;
-  border-radius: 5px;
-  height: 8px;
   overflow: hidden;
-}
-
-.progress-fill {
   height: 8px;
-  background-color: #00BFFF;
-  border-radius: 5px;
-  transition: width 0.5s ease;
+  margin-top: 6px;
+  width: 100%;
 }
 
+.progress-card .progress-fill {
+  background-color: #00bcd4;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+  border-radius: 10px;
+}
 
+.stat-icon i {
+  font-size: 1.6rem;
+  color: #00bcd4;
+}
+
+.stat-text .big {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-text .small {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+  }
+
+  .stat-item {
+    flex: 1 1 100%;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #111;
+  padding: 1rem;
+  gap: 10px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.stat-item {
+  flex: 1 1 22%;
+  min-width: 140px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+}
+
+.stat-icon i {
+  font-size: 1.6rem;
+  color: #00bcd4;
+}
+
+.stat-text .big {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-text .small {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .stat-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
