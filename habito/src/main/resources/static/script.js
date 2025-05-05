@@ -82,3 +82,10 @@ function generateHeatmapData() {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", function () {
+    const dateElement = document.getElementById("current-date");
+    const currentDate = new Date();
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = currentDate.toLocaleDateString("en-US", options);
+    dateElement.textContent = formattedDate;
+  });
