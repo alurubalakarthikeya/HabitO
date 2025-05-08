@@ -133,12 +133,21 @@ header {
   background: #1a1a1a;
   border: 1px solid #444;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 20px;
   width: 220px;
 }
 
 .habit-card h3 {
   font-size: 1.1rem;
+}
+
+.habit-card i,h3,p,a {
+  padding: 5px;
+}
+
+.habit-card i {
+  font-size: 1.5rem;
+  color: #0099cc;
 }
 
 .mark-link {
