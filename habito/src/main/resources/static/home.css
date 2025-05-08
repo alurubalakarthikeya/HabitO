@@ -291,3 +291,41 @@ header {
   border-bottom: 1px solid rgb(70, 70, 70);
 }
 }
+
+.calendar-container {
+  max-width: 600px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 6px;
+}
+
+.day-square {
+  background-color: #2a2a2a;
+  border-radius: 2.5px;
+  aspect-ratio: 1 / 1;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.day-square:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.level-1 {
+  background-color: #00ccff;
+}
+.level-2 {
+  background-color: #0099cc;
+}
+.level-3 {
+  background-color: #0077aa;
+}
+
+@media (max-width: 480px) {
+  .calendar-grid {
+    gap: 4px;
+  }
+}
