@@ -165,15 +165,15 @@
             <div class="day-square level-1"></div>
             <div class="day-square level-2"></div>
             <div class="day-square level-3"></div>
-            
           </div>
         </div>
-        
       </div>
       <div class="section analytics">
         <h2>Analytics & Stats</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">Last 7 Days</p>
-        <h3 style="color: var(--blue); font-size: 1.5rem;">80%</h3>
+        <div class="analytics-box">
+          <canvas id="habitChart" width="300" height="100"></canvas>
+        </div>
+        <p style="color: var(--blue); font-size: 2vh;">80% from past 7 days</p>
       </div>
       <div class="section top-habits">
         <h2>Top Habits</h2>
@@ -189,5 +189,6 @@
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

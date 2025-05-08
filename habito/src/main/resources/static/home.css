@@ -289,7 +289,12 @@ header {
   header {
     padding-bottom: 15px;
   border-bottom: 1px solid rgb(70, 70, 70);
+  }
 }
+
+.analytics-box canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .calendar-container {
