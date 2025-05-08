@@ -299,7 +299,7 @@ header {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(14, 1fr);
-  gap: 6px;
+  gap: 4px;
 }
 
 .day-square {
@@ -326,6 +326,8 @@ header {
 
 @media (max-width: 480px) {
   .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(17.5, 0.5fr);
     gap: 4px;
   }
 }
