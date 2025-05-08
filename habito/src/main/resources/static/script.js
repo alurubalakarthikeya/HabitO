@@ -200,3 +200,34 @@ function generateHeatmapData() {
   document.getElementById("quoteBox").innerHTML = `
     <p><i class="${quote.icon}"></i> <strong>${quote.text}</strong> – ${quote.author}</p>
   `;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const ctx = document.getElementById("habitChart").getContext("2d");
+    const gradient = ctx.createLinearGradient(0, 0, 0, 150);
+    gradient.addColorStop(0, 'rgba(0, 207, 255, 0.3)');  
+    gradient.addColorStop(1, 'rgba(0, 207, 255, 0)');   
+    const habitChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array.from({ length: 10 }, (_, i) => `Day ${i + 1}`),
+        datasets: [{
+          label: 'Habit Consistency',
+          data: [10, 42, 76, 88, 55, 90, 86, 74, 85, 92],
+          borderColor: '#00cfff',
+          backgroundColor: gradient,     
+          tension: 0.4,
+          borderWidth: 3,
+          pointRadius: 0,
+          fill: true                    
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { display: false },
+          y: { display: false, min: 0, max: 100 }
+        }
+      }
+    });
+  });
