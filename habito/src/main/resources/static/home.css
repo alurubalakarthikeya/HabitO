@@ -70,6 +70,7 @@ header {
   min-width: 280px;
   background: var(--card-dark);
   border: 1px solid rgb(71, 71, 71);
+  box-shadow: 0 0 10px rgba(70, 70, 70, 0.3);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -113,6 +114,7 @@ header {
 .section {
   background: var(--card-dark);
   border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(70, 70, 70, 0.3);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -321,12 +323,15 @@ header {
 
 .level-1 {
   background-color: #00ccff;
+  box-shadow: 0 0 5px #69c1fb;
 }
 .level-2 {
   background-color: #0099cc;
+  box-shadow: 0 0 5px rgb(6, 164, 255);
 }
 .level-3 {
   background-color: #0077aa;
+  box-shadow: 0 0 5px var(--blue-color);
 }
 
 @media (max-width: 480px) {
