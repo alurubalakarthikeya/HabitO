@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function switchToLogin() {
       formBox.innerHTML = `
+          <h2>Login</h2><hr>
           <div class="input-field">
               <label for="name">Username</label><br>
               <div class="input-icon">
@@ -85,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function switchToRegister() {
       formBox.innerHTML = `
+          <h2>Register</h2><hr>
           <div class="input-field">
               <label for="name">Username</label><br>
               <div class="input-icon">

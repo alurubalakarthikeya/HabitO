@@ -128,8 +128,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--blue-color);
-    box-shadow: 0 0 20px rgba(34, 161, 235, 0.512);
+    border: 2px solid rgb(70, 70, 70);
+    box-shadow: 0 0 20px rgba(70, 70, 70, 0.512);
   }
 
   .streak-container {
@@ -331,8 +331,12 @@
     }
 
     .main-screen {
-        margin-top: 70px;
+        margin-top: 60px;
         gap: 80px;
+    }
+
+    .input-icon i {
+        margin-right: 7px;
     }
 }
 
@@ -351,12 +355,13 @@
 }
 
 form {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     background-color: var(--black-color);
     padding: 30px;
-    border: 1.5px solid var(--blue-color);
-    box-shadow: 0px 0px 10px rgba(43, 177, 255, 0.8);
+    border: 2px solid rgb(70, 70, 70);
+    box-shadow: 0px 0px 10px rgba(70, 70, 70, 0.8);
     border-radius: 20px;
 }
 
@@ -366,7 +371,21 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+}
+
+.input-fields h2{
+    margin: 0px;
+    font-size: 3vh;
+}
+
+.input-fields hr {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(70, 70, 70, 0.512);
+    border: none;
+    margin: 0px;
+    margin-bottom: 10px;
 }
 
 .btn-n {
@@ -394,30 +413,40 @@ form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form input[type="number"], form button {
-    width: 85%;
+    width: 92%;
     padding: 10px;
-    border: 1px solid var(--blue-color);
+    border: 1px solid rgb(70, 70, 70);
     font-family: var(--main-font);
     border-radius: 6px;
     margin: 5px 0;
-    box-shadow: 0px 1px 5px rgba(43, 177, 255, 0.6);
+    box-shadow: 0px 1px 5px rgba(70, 70, 70, 0.6);
     background-color: var(--black-color);
-    color: var(--white-color);
+    color: var(--blue-color);
 }
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="number"]:focus {
+    border-color: var(--blue-color); 
+    box-shadow: 0px 0px 5px var(--blue-color);
+    outline: none; 
+}
+
 
 .btn-n button {
     font-size: 1.8vh;
     font-family: var(--main-font);
     width: 100%;
     margin: 15px;
-    background-color: var(--blue-color);
-    color: var(--black-color);
+    background-color: rgba(70, 70, 70, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     transition: 0.4s ease-in-out;
 }
 
 form button:hover {
-    background-color: var(--black-color);
-    color: var(--blue-color);
+    background-color: var(--blue-color);
+    color: var(--black-color);
     cursor: pointer;
 }
 
@@ -450,7 +479,7 @@ form p a {
 
 .input-icon i {
     position: absolute;
-    left: 10px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--blue-color);
@@ -458,13 +487,9 @@ form p a {
     transition: 0.3s;
     pointer-events: none;
     padding: 5px;
-    background-color: rgba(34, 161, 235, 0.512);
     border-radius: 10px;
 }
 
-.input-icon input {
-    padding-left: 35px !important;
-}
 
 span{
     display: flex;
@@ -509,7 +534,11 @@ span img {
   .content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+  }
+
+  .content h1 {
+    font-size: 6vh;
   }
 
   .socials {
