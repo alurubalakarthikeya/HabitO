@@ -200,3 +200,18 @@ document.addEventListener("DOMContentLoaded", () => {
     monthBlock.appendChild(grid);
     calendar.appendChild(monthBlock);
   });
+
+  // Login API Call
+fetch("/api/users/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ username: "carty", password: "mypassword" })
+})
+  .then(res => res.ok ? res.json() : Promise.reject("Login failed"))
+  .then(user => console.log("Logged in:", user))
+  .catch(err => alert(err));
+fetch("/api/users/register", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ username: "carty", email: "me@mail.com", password: "1234" })
+})
