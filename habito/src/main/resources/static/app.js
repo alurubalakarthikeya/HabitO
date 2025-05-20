@@ -215,3 +215,21 @@ fetch("/api/users/register", {
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ username: "carty", email: "me@mail.com", password: "1234" })
 })
+
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
+
+    if (res.ok) {
+        window.location.href = "home.html";
+    } else {
+        alert("Login failed");
+    }
+});

@@ -162,7 +162,14 @@
     animation: fadeInScale 0.5s ease forwards;
     opacity: 0;
   }
-  
+
+  .intensity-1:hover,
+  .intensity-2:hover,
+  .intensity-3:hover,
+  .intensity-4:hover,
+  .intensity-5:hover {
+    transform: scale(1.2);
+  }
 
   .intensity-1 { background-color: #9fd2f5; box-shadow: 0 0 3px #9fd2f5; }
   .intensity-2 { background-color: #69c1fb; box-shadow: 0 0 3px #69c1fb; }

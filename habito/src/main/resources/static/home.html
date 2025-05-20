@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="shortcut icon" href="logowithoutbg.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">Habit<span class="blue">O</span></div>
+      <div class="date">
+        <span><i class="fa-solid fa-user-tie blue"></i></span>
+        <span><i class="fa-solid fa-bell blue"></i></span>
+        <span id="current-date"></span>
+      </div>
+    </header>
+    <div class="greeting">Good morning, <span class="blue">Carty</span>!</div>
+    <div class="top-row">
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-fire-flame-curved blue"></i></div>
+          <div class="stat-text">
+            <div class="big">10 day</div>
+            <div class="small">streak</div>
+          </div>
+        </div>
+        <div class="stat-item progress-card">
+          <div class="stat-icon"><i class="fa-solid fa-chart-line blue"></i></div>
+          <div class="stat-text">
+            <div class="big">Level 3</div>
+            <div class="small">80% left</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-circle-check blue"></i></div>
+          <div class="stat-text">
+            <div class="big">32, habits completed</div>
+            <div class="small">do what it does.</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-bolt blue"></i></div>
+          <div class="stat-text">
+            <div class="big">“Push yourself.”</div>
+            <div class="small">Motivation of the Day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote" id="quoteBox"></div>
+    <div class="section">
+      <h2>Habit Dashboard</h2>
+      <div class="habit-grid">
+        <div class="habit-card">
+          <i class="fa-solid fa-person-running blue"></i>
+          <h3>Morning Run</h3>
+          <p>5 h 20 m left</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <i class="fa-solid fa-language blue"></i>
+          <h3>Learn Spanish</h3>
+          <p>5 h 30 m</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <i class="fa-solid fa-book blue"></i>
+          <h3>Read Book</h3>
+          <p class="mark-link">Done</p>
+          <span
+            style="font-size: 0.8rem; background: var(--blue); color: black; padding: 2px 5px; border-radius: 5px; display: inline-block;">Completed</span>
+        </div>
+        <div class="habit-card">
+          <i class="fa-solid fa-file blue"></i>
+          <h3>Project Work</h3>
+          <p>3 h 20 m left</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+        <div class="habit-card">
+          <i class="fa-solid fa-bottle-water blue"></i>
+          <h3>Drink 3L water</h3>
+          <p>24 h left</p>
+          <a class="mark-link" href="#">Mark complete</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div class="section calendar">
+        <h2>Calendar View</h2>
+        <div class="calendar-container">
+          <div class="calendar-grid">
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-3"></div>
+            <div class="day-square"></div>
+            <div class="day-square"></div>
+            <div class="day-square level-1"></div>
+            <div class="day-square level-2"></div>
+            <div class="day-square level-3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section top-habits">
+        <h2>Top Habits</h2>
+        <p>Read Book</p>
+        <p>Morning Run</p>
+        <p>Meditate</p>
+      </div>
+      <div class="section analytics">
+        <h2>Analytics & Stats</h2>
+        <div class="analytics-box">
+          <canvas id="habitChart" width="300" height="100"></canvas>
+        </div>
+        <p style="color: var(--blue); font-size: 2vh;">80% from past 7 days</p>
+      </div>
+      <div class="section challenges">
+        <h2>Social & Challenges</h2>
+        <p>30-Day Coding <a href="#" class="mark-link">Join</a></p>
+        <p>Read Daily <a href="#" class="mark-link">Join</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
