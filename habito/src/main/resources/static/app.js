@@ -53,27 +53,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function switchToLogin() {
       formBox.innerHTML = `
-          <h2>Login</h2><hr>
-          <div class="input-field">
-              <label for="name">Username</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-user"></i>
-                  <input type="text" id="name" name="username" required>
-              </div>
-          </div>
-          
-          <div class="input-field">
-              <label for="password">Password</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="password" id="password" name="password" required>
-              </div>
-          </div>
-          
-          <div class="btn-n">
-              <button type="submit">Log In</button>
-              <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
-          </div>
+          <form id="loginForm">
+  <div id="form" class="input-fields">
+    <h2>Login</h2><hr>
+
+    <div class="input-field">
+      <label for="loginUsername">Username</label><br>
+      <div class="input-icon">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="loginUsername" name="username" required>
+      </div>
+    </div>
+
+    <div class="input-field">
+      <label for="loginPassword">Password</label><br>
+      <div class="input-icon">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="loginPassword" name="password" required>
+      </div>
+    </div>
+
+    <div class="btn-n">
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+    </div>
+  </div>
+</form>
+
       `;
 
       const switchToRegisterLink = document.getElementById("switchToRegister");
@@ -82,46 +88,67 @@ document.addEventListener("DOMContentLoaded", function () {
           buttonText.innerText = "Login";
           switchToRegister();
       });
+      document.getElementById("loginForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("loginUsername").value;
+  const password = document.getElementById("loginPassword").value;
+
+  const response = await fetch("/api/users/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  });
+
+  if (response.ok) {
+    window.location.href = "/home.html";
+  } else {
+    const text = await response.text();
+    alert("Login failed: " + text);
+  }
+});
+
   }
 
   function switchToRegister() {
       formBox.innerHTML = `
-          <h2>Register</h2><hr>
-          <div class="input-field">
-              <label for="name">Username</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-user"></i>
-                  <input type="text" id="name" name="username" required>
+          <form id="registerForm">
+              <div id="form" class="input-fields">
+                <h2>Register</h2><hr>
+                <div class="input-field">
+                  <label for="name">Username</label><br>
+                  <div class="input-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" name="username" required>
+                  </div>
+                </div>
+                <div class="input-field">
+                  <label for="email">Email</label><br>
+                  <div class="input-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                </div>  
+                <div class="input-field">
+                  <label for="password">Password</label><br>
+                  <div class="input-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" required>
+                  </div>
+                </div>
+                <div class="input-field">
+                  <label for="confirmPassword">Confirm Password</label><br>
+                  <div class="input-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                  </div>
+                </div>
+                <div class="btn-n">
+                  <button type="submit">Register</button>
+                  <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </div>
               </div>
-          </div>
-          
-          <div class="input-field">
-              <label for="email">Email</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-envelope"></i>
-                  <input type="email" id="email" name="email" required>
-              </div>
-          </div>
-          
-          <div class="input-field">
-              <label for="password">Password</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="password" id="password" name="password" required>
-              </div>
-          </div>
-          
-          <div class="input-field">
-              <label for="confirmPassword">Confirm Password</label><br>
-              <div class="input-icon">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="password" id="confirmPassword" name="confirmPassword" required>
-              </div>
-          </div>
-          <div class="btn-n">
-              <button type="submit">Register</button>
-              <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
-          </div>
+            </form>
       `;
       const switchToLoginLink = document.getElementById("switchToLogin");
       switchToLoginLink.addEventListener("click", function (e) {
@@ -129,6 +156,34 @@ document.addEventListener("DOMContentLoaded", function () {
           buttonText.innerText = "Register";
           switchToLogin();
       });
+
+      document.getElementById("registerForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  const response = await fetch("/api/users/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, email, password })
+  });
+
+  if (response.ok) {
+    window.location.href = "/home.html";
+  } else {
+    const text = await response.text();
+    alert("Registration failed: " + text);
+  }
+});
+
   }
   const initialSwitchToLoginLink = document.getElementById("switchToLogin");
   if (initialSwitchToLoginLink) {
@@ -200,36 +255,3 @@ document.addEventListener("DOMContentLoaded", () => {
     monthBlock.appendChild(grid);
     calendar.appendChild(monthBlock);
   });
-
-  // Login API Call
-fetch("/api/users/login", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ username: "carty", password: "mypassword" })
-})
-  .then(res => res.ok ? res.json() : Promise.reject("Login failed"))
-  .then(user => console.log("Logged in:", user))
-  .catch(err => alert(err));
-fetch("/api/users/register", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ username: "carty", email: "me@mail.com", password: "1234" })
-})
-
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
-
-    if (res.ok) {
-        window.location.href = "home.html";
-    } else {
-        alert("Login failed");
-    }
-});

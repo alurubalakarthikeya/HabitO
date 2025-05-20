@@ -231,3 +231,41 @@ function generateHeatmapData() {
       }
     });
   });
+
+  document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
+
+    if (response.ok) {
+        window.location.href = "home.html";
+    } else {
+        alert("Login failed. Please check your credentials.");
+    }
+});
+
+document.getElementById("registerForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("registerUsername").value;
+    const password = document.getElementById("registerPassword").value;
+
+    const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
+
+    if (response.ok) {
+        window.location.href = "home.html";
+    } else {
+        alert("Registration failed. Username might already exist.");
+    }
+});

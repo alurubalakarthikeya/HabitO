@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS habito;
+USE habito;
+CREATE TABLE IF NOT EXISTS users (
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  user_name VARCHAR(50) NOT NULL UNIQUE,
+  user_email VARCHAR(100) NOT NULL UNIQUE,
+  user_password VARCHAR(255) NOT NULL
+);
+INSERT INTO users values(1,"Krishna", "krishna@gmail.com", "krish@123");
+select * from users;
