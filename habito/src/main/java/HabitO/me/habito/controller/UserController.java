@@ -1,7 +1,5 @@
 package HabitO.me.habito.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,14 +21,19 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        return ResponseEntity.ok(userService.register(user));
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        if (userService.existsByUsername(user.getUsername())) {
+            return ResponseEntity.badRequest().body("Username already exists");
+        }
+        userService.saveUser(user);
+        return ResponseEntity.ok("User registered successfully");
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> creds) {
-        User user = userService.login(creds.get("username"), creds.get("password"));
-        if (user != null) return ResponseEntity.ok(user);
+    public ResponseEntity<String> loginUser(@RequestBody User user) {
+        if (userService.validateCredentials(user.getUsername(), user.getPassword())) {
+            return ResponseEntity.ok("Login successful");
+        }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
     }
 }
