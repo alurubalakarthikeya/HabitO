@@ -1,79 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HabitO | Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="logowithoutbg.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HabitO | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="logowithoutbg.png" type="image/x-icon" />
 </head>
 <body>
-    <nav class="navBar">
-        <div class="logo">
-            <h2><span>Habit <span class="blue">O</span></h2>
-        </div>
-        <div class="navItems">
-            <a href="about.html" class="basicLink">About</a>
-            <a id="login-btn" onclick="switchToLogin()"><button id="buttonText">Login</button></a>
-        </div>
-    </nav>
-    <div class="main-screen">
-        <div class="home">
-            <div class="content">
-                <h1>Welcome to <span>Habit <span class="blue">O</span></h1>
-                <div class="container">
-                    <div class="streak-grid" id="streakGrid"></div>
-                </div>
-                <p>Your personal habit tracker <br> Track your habits, stay motivated, and achieve your goals!</p>
-                <div class="socials">
-                    <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="form">
-            <form id="registerForm">
-              <div id="form" class="input-fields">
-                <h2>Register</h2><hr>
-                <div class="input-field">
-                  <label for="name">Username</label><br>
-                  <div class="input-icon">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" id="name" name="username" required>
-                  </div>
-                </div>
-                <div class="input-field">
-                  <label for="email">Email</label><br>
-                  <div class="input-icon">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" id="email" name="email" required>
-                  </div>
-                </div>  
-                <div class="input-field">
-                  <label for="password">Password</label><br>
-                  <div class="input-icon">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="password" name="password" required>
-                  </div>
-                </div>
-                <div class="input-field">
-                  <label for="confirmPassword">Confirm Password</label><br>
-                  <div class="input-icon">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                  </div>
-                </div>
-                <div class="btn-n">
-                  <button type="submit">Register</button>
-                  <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
-                </div>
-              </div>
-            </form>
-        </div>
+  <nav class="navBar">
+    <div class="logo">
+      <h2><span>Habit <span class="blue">O</span></h2>
     </div>
-<script src="app.js"></script>
+    <div class="navItems">
+      <a href="about.html" class="basicLink">About</a>
+      <a id="login-btn"><button id="buttonText">Login</button></a>
+    </div>
+  </nav>
+
+  <div class="main-screen">
+    <div class="home">
+      <div class="content">
+        <h1>Welcome to <span>Habit <span class="blue">O</span></h1>
+        <div class="container">
+          <div class="streak-grid" id="streakGrid"></div>
+        </div>
+        <p>Your personal habit tracker <br /> Track your habits, stay motivated, and achieve your goals!</p>
+        <div class="socials">
+          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- This div will be filled dynamically with either register or login form -->
+    <div class="form">
+      <div id="formBox"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
