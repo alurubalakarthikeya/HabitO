@@ -43,7 +43,5 @@ public ResponseEntity<?> login(@RequestBody Map<String, String> loginData) {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("message", e.getMessage()));
     }
-}
-
-    
+}   
 }

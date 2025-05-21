@@ -2,8 +2,6 @@ package HabitO.me.habito.model;
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 
-// etc.
-
 
 @Entity
 @Table(name = "users")
