@@ -2,12 +2,13 @@ package HabitO.me.habito.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 @Configuration
+@EnableWebSecurity
 public class WebSecurityConfig {
 
     @Bean
@@ -16,19 +17,18 @@ public class WebSecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
-                    "/", "/index.html", "/styles.css", "/app.js", "/logowithoutbg.png",
-                    "/home.html", "/api/users/register", "/api/users/login"
+                    "/", "/index.html", "/home.html", "/trail.html",
+                    "/home.css", "/styles.css", "/app.js", "/script.js",
+                    "/images/**", "/api/auth/login", "/api/stats/user", "/api/stats/dailies"
                 ).permitAll()
                 .anyRequest().authenticated()
             )
-            .formLogin(login -> login.disable())
-            .httpBasic(httpBasic -> httpBasic.disable());
+            .formLogin(Customizer.withDefaults())
+            .httpBasic(Customizer.withDefaults())
+            .logout(logout -> logout.disable()) // Only disable if you're not using logout
+            .sessionManagement(Customizer.withDefaults());
 
         return http.build();
     }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 }
+
