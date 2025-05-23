@@ -1,265 +1,105 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('habit-form');
-    const habitList = document.getElementById('habit-list');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const habitInput = document.getElementById('habit-input');
-        const habitText = habitInput.value.trim();
-
-        if (habitText) {
-            const listItem = document.createElement('li');
-            listItem.textContent = habitText;
-            habitList.appendChild(listItem);
-            habitInput.value = '';
-        }
-    });
-});
-
-function openNav() {
-    document.getElementById("navSlide").style.width = "250px";
-    document.getElementById("menuBar").style.display = "none";
-    document.getElementById("closeBtn").style.display = "block";
-}
-  
-function closeNav() {
-    document.getElementById("navSlide").style.width = "0";
-    document.getElementById("menuBar").style.display = "block";
-    document.getElementById("closeBtn").style.display = "none";
-}
-
-const grid = document.getElementById("streakGrid");
-  for (let i = 0; i < 110; i++) {
-    const box = document.createElement("div");
-    box.classList.add("streak-box");
-    const intensity = Math.floor(Math.random() * 6); 
-    if (intensity > 0) box.classList.add(`intensity-${intensity}`);
-
-    grid.appendChild(box);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const boxes = document.querySelectorAll(".streak-box");
-    boxes.forEach(box => {
-        const randomDelay = (Math.random() * 2).toFixed(2);
-        box.style.animationDelay = `${randomDelay}s`;
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   const buttonLogin = document.getElementById("login-btn");
   const formBox = document.getElementById("formBox");
-  const buttonText = document.getElementById("buttonText");
 
-  function switchToLogin() {
+  function showHabiticaLoginForm() {
     formBox.innerHTML = `
-      <form id="loginForm">
+      <form id="habiticaLoginForm">
         <div class="input-fields">
-          <h2>Login</h2><hr>
+          <h2>Habitica Login</h2><hr>
           <div class="input-field">
-            <label for="loginUsername">Username</label><br>
+            <label for="habiticaId">User ID</label><br>
             <div class="input-icon">
               <i class="fa-solid fa-user"></i>
-              <input type="text" id="loginUsername" name="username" required>
+              <input type="text" id="habiticaId" name="habiticaId" required>
             </div>
           </div>
           <div class="input-field">
-            <label for="loginPassword">Password</label><br>
+            <label for="habiticaApi">API Token</label><br>
             <div class="input-icon">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="loginPassword" name="password" required>
+              <i class="fa-solid fa-key"></i>
+              <input type="text" id="habiticaApi" name="habiticaApi" required>
             </div>
           </div>
           <div class="btn-n">
-            <button type="submit">Login</button>
-            <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            <button type="submit" onclick="handleLogin()">Login</button>
+            <p><i>Where to find these creds?</i> <a href="https://habitica.com/user/settings/api" target="_blank">Click here</a></p>
           </div>
         </div>
       </form>
     `;
 
-    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    function handleLogin() {
+  const userId = document.getElementById("userId").value;
+  const apiToken = document.getElementById("apiToken").value;
+
+  if (!userId || !apiToken) {
+    alert("Please fill in both fields.");
+    return;
+  }
+
+  localStorage.setItem("habiticaUserId", userId);
+  localStorage.setItem("habiticaApiToken", apiToken);
+
+  // Navigate to home
+  window.location.href = "home.html";
+}
+
+
+    document.getElementById("habiticaLoginForm").addEventListener("submit", async function (e) {
       e.preventDefault();
-      const username = document.getElementById("loginUsername").value;
-      const password = document.getElementById("loginPassword").value;
+      const habiticaId = document.getElementById("habiticaId").value.trim();
+      const habiticaApi = document.getElementById("habiticaApi").value.trim();
 
-      const response = await fetch("/api/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
-
-      if (response.ok) {
-        window.location.href = "/home.html";
-      } else {
-        const text = await response.text();
-        alert("Login failed: " + text);
+      try {
+         const response = await fetch("https://habitica.com/api/v3/user", {
+      method: "GET",
+      headers: {
+        "x-api-user": habiticaId,
+        "x-api-key": habiticaApi,
+        "Content-Type": "application/json"
       }
-    });
+        });
 
-    document.getElementById("switchToRegister").addEventListener("click", function (e) {
-      e.preventDefault();
-      buttonText.innerText = "Login";
-      switchToRegister();
+        if (response.ok) {
+          const userData = await response.json();
+          const username = userData.data.profile.name;
+          // Store the username in localStorage
+          localStorage.setItem("habiticaUsername", username);
+          window.location.href = "/home.html";
+        } else {
+          const text = await response.text();
+          alert("Login failed: " + text);
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+      }
     });
   }
 
-  function switchToRegister() {
-    formBox.innerHTML = `
-      <form id="registerForm">
-        <div class="input-fields">
-          <h2>Register</h2><hr>
-          <div class="input-field">
-            <label for="name">Username</label><br>
-            <div class="input-icon">
-              <i class="fa-solid fa-user"></i>
-              <input type="text" id="name" name="username" required>
-            </div>
-          </div>
-          <div class="input-field">
-            <label for="email">Email</label><br>
-            <div class="input-icon">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="email" name="email" required>
-            </div>
-          </div>
-          <div class="input-field">
-            <label for="password">Password</label><br>
-            <div class="input-icon">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="password" name="password" required>
-            </div>
-          </div>
-          <div class="input-field">
-            <label for="confirmPassword">Confirm Password</label><br>
-            <div class="input-icon">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
-          </div>
-          <div class="btn-n">
-            <button type="submit">Register</button>
-            <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
-          </div>
-        </div>
-      </form>
-    `;
-
-    document.getElementById("registerForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const username = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-      }
-
-      const response = await fetch("/api/users/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, email, password })
-      });
-
-      if (response.ok) {
-        window.location.href = "/home.html";
-      } else {
-        const text = await response.text();
-        alert("Registration failed: " + text);
-      }
-    });
-
-    document.getElementById("switchToLogin").addEventListener("click", function (e) {
-      e.preventDefault();
-      buttonText.innerText = "Register";
-      switchToLogin();
+  if (buttonLogin) {
+    buttonLogin.addEventListener("click", function () {
+      showHabiticaLoginForm();
     });
   }
 
-  buttonLogin.addEventListener("click", function () {
-    if (buttonText.innerText === "Login") {
-      buttonText.innerText = "Register";
-      switchToLogin();
-    } else {
-      buttonText.innerText = "Login";
-      switchToRegister();
-    }
-  });
-
-  // Load register form by default
-  switchToRegister();
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const buttonLogin = document.getElementById("login-btn");
-  const formBox = document.getElementById("form");
-  const buttonText = document.getElementById("buttonText");
-
-  // Show register form by default
-  buttonText.innerText = "Login"; // So it shows "Register" when toggled
-  switchToRegister();
-
-  buttonLogin.addEventListener("click", function () {
-    if (buttonText.innerText === "Login") {
-      buttonText.innerText = "Register";
-      switchToLogin();
-    } else {
-      buttonText.innerText = "Login";
-      switchToRegister();
-    }
-  });
+  showHabiticaLoginForm(); // Show form by default
 });
 
-
-// script.js
-
+// STREAK GRID ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
-    const addHabitBtn = document.querySelector(".add-habit");
-    addHabitBtn.addEventListener("click", () => {
-      alert("Redirect to Add Habit Page or Open Modal");
-    });
-  
-    const calendarOptions = document.querySelectorAll(".calendar-options span");
-    calendarOptions.forEach(option => {
-      option.addEventListener("click", () => {
-        calendarOptions.forEach(o => o.classList.remove("selected"));
-        option.classList.add("selected");
-        // You can add logic to update the calendar based on selected option
-      });
-    });
+  const grid = document.getElementById("streakGrid");
+  for (let i = 0; i < 110; i++) {
+    const box = document.createElement("div");
+    box.classList.add("streak-box");
+    const intensity = Math.floor(Math.random() * 6);
+    if (intensity > 0) box.classList.add(`intensity-${intensity}`);
+    grid.appendChild(box);
+  }
+
+  const boxes = document.querySelectorAll(".streak-box");
+  boxes.forEach(box => {
+    const randomDelay = (Math.random() * 2).toFixed(2);
+    box.style.animationDelay = `${randomDelay}s`;
   });
-  
-  const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  ];
-
-  const calendar = document.getElementById("calendar");
-
-  months.forEach(month => {
-    const monthBlock = document.createElement("div");
-    monthBlock.className = "month-block";
-
-    const title = document.createElement("h3");
-    title.textContent = month;
-    monthBlock.appendChild(title);
-
-    const grid = document.createElement("div");
-    grid.className = "calendar-grid";
-
-    for (let i = 1; i <= 30; i++) {
-      const day = document.createElement("div");
-      day.className = "calendar-day";
-
-      // randomly fill 40-60% of days
-      if (Math.random() < 0.5) {
-        day.classList.add("filled");
-      }
-
-      grid.appendChild(day);
-    }
-
-    monthBlock.appendChild(grid);
-    calendar.appendChild(monthBlock);
-  });
+});

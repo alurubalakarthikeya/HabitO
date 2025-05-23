@@ -8,3 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 INSERT INTO users values(1,"Krishna", "krishna@gmail.com", "krish@123");
 select * from users;
+CREATE TABLE USER_CREDS(
+  USER_ID VARCHAR(40) NOT NULL PRIMARY KEY,
+  USER_API_KEY VARCHAR(40) NOT NULL UNIQUE 
+);

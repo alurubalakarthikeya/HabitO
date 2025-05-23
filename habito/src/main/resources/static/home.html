@@ -12,82 +12,120 @@
 <body>
   <div class="container">
     <header>
-      <div class="title">Habit<span class="blue">O</span></div>
+      <div class="title"> Habit<span class="blue">O</span></div>
       <div class="date">
         <span><i class="fa-solid fa-user-tie blue"></i></span>
         <span><i class="fa-solid fa-bell blue"></i></span>
         <span id="current-date"></span>
       </div>
     </header>
-    <div class="greeting">Good morning, <span class="blue">Carty</span>!</div>
+    <div class="greeting">Good <span class="time-of-day"></span>, <span class="username blue"></span>!</div>
     <div class="top-row">
       <div class="stats">
         <div class="stat-item">
           <div class="stat-icon"><i class="fa-solid fa-fire-flame-curved blue"></i></div>
           <div class="stat-text">
-            <div class="big">10 day</div>
+            <div class="big"><span class="streak-count"></span> days</div>
+            <div class="small">streak</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-fire-flame-curved blue"></i></div>
+          <div class="stat-text">
+            <div class="big"><span class="streak-count"></span> days</div>
             <div class="small">streak</div>
           </div>
         </div>
         <div class="stat-item progress-card">
           <div class="stat-icon"><i class="fa-solid fa-chart-line blue"></i></div>
           <div class="stat-text">
-            <div class="big">Level 3</div>
-            <div class="small">80% left</div>
+            <div class="big">Level <span class="level-count"></span></div>
+            <div class="small"><span class="progress-percent"></span> left</div>
           </div>
         </div>
         <div class="stat-item">
           <div class="stat-icon"><i class="fa-solid fa-circle-check blue"></i></div>
           <div class="stat-text">
-            <div class="big">32, habits completed</div>
-            <div class="small">do what it does.</div>
+            <div class="big"><span class="habits-completed"></span> habits</div>
+            <div class="small"> completed!</div>
           </div>
         </div>
         <div class="stat-item">
           <div class="stat-icon"><i class="fa-solid fa-bolt blue"></i></div>
           <div class="stat-text">
-            <div class="big">“Push yourself.”</div>
-            <div class="small">Motivation of the Day</div>
+            <div class="big">“<span class="quote-text"></span>”</div>
+            <div class="small">Quote</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-bolt blue"></i></div>
+          <div class="stat-text">
+            <div class="big"><span class="user-exp"></span> EXP</div>
+            <div class="small">Grow it!</div>
           </div>
         </div>
       </div>
     </div>
     <div class="quote" id="quoteBox"></div>
-    <div class="section">
-      <h2>Habit Dashboard</h2>
-      <div class="habit-grid">
-        <div class="habit-card">
-          <i class="fa-solid fa-person-running blue"></i>
-          <h3>Morning Run</h3>
-          <p>5 h 20 m left</p>
-          <a class="mark-link" href="#">Mark complete</a>
+    <div class="split-screen">
+    <div class="section dash">
+        <h2>Habit Dashboard</h2>
+        <div class="habit-grid">
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitOne"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+              <i class="fa-brands fa-github"></i>
+            </div>
+          </div>
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitTwo"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+             <i class="fa-regular fa-heart"></i>
+            </div>
+          </div>
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitThree"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+              <i class="fa-solid fa-person-running blue"></i>
+            </div>
+          </div>
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitFour"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+              <i class="fa-regular fa-clipboard"></i>
+            </div>
+          </div>
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitFive"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+          </div>
+          <div class="habit-card">
+            <div class="right">
+              <h3><span class="habitSix"></span></h3>
+              <a class="mark-link btn">Completed</a>
+            </div>
+            <div class="left">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
         </div>
-        <div class="habit-card">
-          <i class="fa-solid fa-language blue"></i>
-          <h3>Learn Spanish</h3>
-          <p>5 h 30 m</p>
-          <a class="mark-link" href="#">Mark complete</a>
         </div>
-        <div class="habit-card">
-          <i class="fa-solid fa-book blue"></i>
-          <h3>Read Book</h3>
-          <p class="mark-link">Done</p>
-          <span
-            style="font-size: 0.8rem; background: var(--blue); color: black; padding: 2px 5px; border-radius: 5px; display: inline-block;">Completed</span>
-        </div>
-        <div class="habit-card">
-          <i class="fa-solid fa-file blue"></i>
-          <h3>Project Work</h3>
-          <p>3 h 20 m left</p>
-          <a class="mark-link" href="#">Mark complete</a>
-        </div>
-        <div class="habit-card">
-          <i class="fa-solid fa-bottle-water blue"></i>
-          <h3>Drink 3L water</h3>
-          <p>24 h left</p>
-          <a class="mark-link" href="#">Mark complete</a>
-        </div>
-      </div>
     </div>
     <div class="footer-grid">
       <div class="section calendar">
@@ -167,12 +205,6 @@
           </div>
         </div>
       </div>
-      <div class="section top-habits">
-        <h2>Top Habits</h2>
-        <p>Read Book</p>
-        <p>Morning Run</p>
-        <p>Meditate</p>
-      </div>
       <div class="section analytics">
         <h2>Analytics & Stats</h2>
         <div class="analytics-box">
@@ -180,12 +212,8 @@
         </div>
         <p style="color: var(--blue); font-size: 2vh;">80% from past 7 days</p>
       </div>
-      <div class="section challenges">
-        <h2>Social & Challenges</h2>
-        <p>30-Day Coding <a href="#" class="mark-link">Join</a></p>
-        <p>Read Daily <a href="#" class="mark-link">Join</a></p>
-      </div>
     </div>
+        </div>
   </div>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
