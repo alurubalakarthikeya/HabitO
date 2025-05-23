@@ -1,41 +1,40 @@
 package HabitO.me.habito.model;
-import jakarta.persistence.*;
-import jakarta.persistence.GenerationType;
 
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USER_CREDS")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    @Column(name = "USER_ID", nullable = false, unique = true, length = 40)
+    private String habiticaUserId;
 
-    @Column(name = "user_name", unique = true, nullable = false)
-    private String username;
+    @Column(name = "USER_API_KEY", nullable = false, unique = true, length = 40)
+    private String habiticaApiToken;
 
-    @Column(name = "user_email", unique = true, nullable = false)
-    private String email;
+    // Constructors
+    public User() {}
 
-    @Column(name = "user_password", nullable = false)
-    private String password;
-
-    @Column(nullable = false)
-    private String role = "USER";
+    public User(String habiticaUserId, String habiticaApiToken) {
+        this.habiticaUserId = habiticaUserId;
+        this.habiticaApiToken = habiticaApiToken;
+    }
 
     // Getters and Setters
-    public Long getUserId() { return userId; }
-    public void setUserId(Long userId) { this.userId = userId; }
+    public String getHabiticaUserId() {
+        return habiticaUserId;
+    }
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
+    public void setHabiticaUserId(String habiticaUserId) {
+        this.habiticaUserId = habiticaUserId;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getHabiticaApiToken() {
+        return habiticaApiToken;
+    }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
-
-    public String getRole() { return role; }
-    public void setRole(String role) { this.role = role; }
+    public void setHabiticaApiToken(String habiticaApiToken) {
+        this.habiticaApiToken = habiticaApiToken;
+    }
 }
