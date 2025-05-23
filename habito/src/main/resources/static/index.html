@@ -14,11 +14,9 @@
       <h2><span>Habit <span class="blue">O</span></h2>
     </div>
     <div class="navItems">
-      <a href="about.html" class="basicLink">About</a>
-      <a id="login-btn"><button id="buttonText">Login</button></a>
+      <a id="login-btn" href="about.html"><button id="buttonText">About</button></a>
     </div>
   </nav>
-
   <div class="main-screen">
     <div class="home">
       <div class="content">
@@ -35,13 +33,30 @@
         </div>
       </div>
     </div>
-
-    <!-- This div will be filled dynamically with either register or login form -->
     <div class="form">
       <div id="formBox"></div>
     </div>
   </div>
-
+  <script>
+    // Simulate a 5 second wait after login before setting localStorage
+    setTimeout(() => {
+        fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                habiticaUserId: "your-user-id",
+                habiticaApiToken: "your-api-token"
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.userId) {
+                localStorage.setItem("habiticaUserId", data.userId);
+                console.log("User ID saved to localStorage!");
+            }
+        });
+    }, 5000);
+</script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -232,40 +232,93 @@ function generateHeatmapData() {
     });
   });
 
-  document.getElementById("loginForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    
-    const username = document.getElementById("loginUsername").value;
-    const password = document.getElementById("loginPassword").value;
-
-    const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
-
-    if (response.ok) {
-        window.location.href = "home.html";
-    } else {
-        alert("Login failed. Please check your credentials.");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  updateUsername();
+  updateTimeOfDay();
 });
 
-document.getElementById("registerForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+// Update username from localStorage or backend result
+function updateUsername() {
+  const username = localStorage.getItem("habiticaUsername");
+  if (!username) return;
+  document.querySelectorAll(".username").forEach(el => {
+    el.textContent = username;
+  });
+}
 
-    const username = document.getElementById("registerUsername").value;
-    const password = document.getElementById("registerPassword").value;
+// Update greeting based on time of day
+function updateTimeOfDay() {
+  const timeOfDaySpan = document.querySelector(".time-of-day");
+  if (!timeOfDaySpan) return;
 
-    const response = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
+  const hour = new Date().getHours();
+  let greeting = "night";
+  if (hour >= 0 && hour < 5) greeting = "early morning";
+  else if (hour < 12) greeting = "morning";
+  else if (hour < 17) greeting = "afternoon";
+  else if (hour < 21) greeting = "evening";
 
-    if (response.ok) {
-        window.location.href = "home.html";
-    } else {
-        alert("Registration failed. Username might already exist.");
+  timeOfDaySpan.textContent = greeting;
+}
+
+  const mockUsers = {
+    CartyK: {
+      streak: 4,
+      level: 4,
+      progress: "64%",
+      habitsCompleted: 2,
+      exp: 36,
+      habitOne: "Work on creative Project",
+      habitTwo: "5 mins of quiet breathing",
+      habitThree: "Exercise and Stretching",
+      habitFour: "Any important work",
+      habitFive: "Engage in a fun activity",
+      habitSix: "Check the mail box"
+    },
+    Bhaanu: {
+      streak: 1,
+      level: 1,
+      progress: "15%",
+      habitsCompleted: 0,
+      habitOne: "Exercise",
+      habitTwo: "Read a Book",
+      habitThree: "Meditate",
+      habitFour: "Drink Water",
+      habitFive: "Learn a Language"
     }
-});
+  };
+
+  const twoWordQuotes = [
+    "Stay Strong", "Keep Going", "Push Forward", "Never Quit", "Be Bold",
+    "Dream Big", "Embrace Change", "Own It", "Rise Up", "Stay Focused"
+  ];
+
+  function renderTopStats(username) {
+    const user = mockUsers[username];
+
+    document.querySelector(".streak-count").textContent = user.streak;
+    document.querySelector(".level-count").textContent = user.level;
+    document.querySelector(".progress-percent").textContent = user.progress;
+    document.querySelector(".habits-completed").textContent = user.habitsCompleted;
+    document.querySelector(".habitOne").textContent = user.habitOne;
+    document.querySelector(".habitTwo").textContent = user.habitTwo;
+    document.querySelector(".habitThree").textContent = user.habitThree;
+    document.querySelector(".habitFour").textContent = user.habitFour;
+    document.querySelector(".habitFive").textContent = user.habitFive;
+    document.querySelector(".habitSix").textContent = user.habitSix;
+    document.querySelector(".user-exp").textContent = user.exp;
+
+    const randomQuote = twoWordQuotes[Math.floor(Math.random() * twoWordQuotes.length)];
+    document.querySelector(".quote-text").textContent = randomQuote;
+  }
+
+  // Run this when page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("habiticaUsername");
+    if (username) {
+      renderTopStats(username);
+    } else {
+      alert("No username found. Please log in again.");
+      window.location.href = "/index.html"; // or your login page
+    }
+  });
