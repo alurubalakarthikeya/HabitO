@@ -264,6 +264,7 @@ function updateTimeOfDay() {
   const mockUsers = {
     CartyK: {
       streak: 4,
+      highestStreak: 7,
       level: 4,
       progress: "64%",
       habitsCompleted: 2,
@@ -277,14 +278,22 @@ function updateTimeOfDay() {
     },
     Bhaanu: {
       streak: 1,
+      highestStreak: 1,
       level: 1,
-      progress: "15%",
+      progress: "6%",
       habitsCompleted: 0,
-      habitOne: "Exercise",
-      habitTwo: "Read a Book",
-      habitThree: "Meditate",
-      habitFour: "Drink Water",
-      habitFive: "Learn a Language"
+      exp: 0,
+      habitOne: "Add a task to habitica",
+    },
+    Krishna: {
+      streak: 1,
+      highestStreak: 1,
+      level: 1,
+      progress: "0%",
+      habitsCompleted: 1,
+      exp: 10,
+      habitOne: "Join Habitica",
+      habitTwo: "Add a task to habitica"
     }
   };
 
@@ -297,6 +306,7 @@ function updateTimeOfDay() {
     const user = mockUsers[username];
 
     document.querySelector(".streak-count").textContent = user.streak;
+    document.querySelector(".highest-streak-count").textContent = user.highestStreak;
     document.querySelector(".level-count").textContent = user.level;
     document.querySelector(".progress-percent").textContent = user.progress;
     document.querySelector(".habits-completed").textContent = user.habitsCompleted;

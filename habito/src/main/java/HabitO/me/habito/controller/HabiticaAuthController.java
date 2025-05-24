@@ -31,7 +31,7 @@ public class HabiticaAuthController {
         User user;
         if (existingUser.isPresent()) {
             user = existingUser.get();
-            user.setHabiticaApiToken(habiticaApiToken); // Update token if changed
+            user.setHabiticaApiToken(habiticaApiToken); 
         } else {
             user = new User();
             user.setHabiticaUserId(habiticaUserId);
@@ -39,9 +39,9 @@ public class HabiticaAuthController {
         }
 
         userRepository.save(user);
-        session.setAttribute("userId", user.getHabiticaUserId()); // Important: Set session attribute
+        session.setAttribute("userId", user.getHabiticaUserId()); 
 
-        // Return user ID for frontend to store in localStorage
+       
         Map<String, String> response = new HashMap<>();
         response.put("message", "Login successful");
         response.put("userId", user.getHabiticaUserId());

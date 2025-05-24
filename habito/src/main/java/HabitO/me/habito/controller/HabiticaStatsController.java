@@ -26,7 +26,6 @@ public class HabiticaStatsController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Not logged in");
         }
 
-        // Now using Habitica ID instead of local DB ID
         Optional<User> userOptional = userRepository.findByHabiticaUserId(userId);
         if (userOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
