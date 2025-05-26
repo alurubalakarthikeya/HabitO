@@ -18,4 +18,3 @@ HabitO is a **full-stack** habit-tracking application designed to help you **bui
  🫧 **Reminders & Notifications** – Never miss a habit again  
  🍀 **Gamification Elements** – Earn rewards for consistency  
  🍄 **Multi-Platform Support** – Works as a website & desktop app  
-
