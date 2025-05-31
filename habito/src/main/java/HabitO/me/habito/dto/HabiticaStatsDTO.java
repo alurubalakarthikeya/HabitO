@@ -1,6 +1,7 @@
 package HabitO.me.habito.dto;
 
 public class HabiticaStatsDTO {
+    private String id;
     private String name;
     private int level;
     private double hp;
@@ -10,7 +11,8 @@ public class HabiticaStatsDTO {
     private double maxHealth;
     private double maxMP;
 
-    public HabiticaStatsDTO(String name, int level, double hp, double mp, double exp, double gp, double maxHealth, double maxMP) {
+    public HabiticaStatsDTO(String id, String name, int level, double hp, double mp, double exp, double gp, double maxHealth, double maxMP) {
+        this.id = id;
         this.name = name;
         this.level = level;
         this.hp = hp;
@@ -22,6 +24,9 @@ public class HabiticaStatsDTO {
     }
 
     // Getters and setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
