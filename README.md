@@ -8,7 +8,7 @@ HabitO is a **full-stack** habit-tracking application designed to help you **bui
 **<h2>Tech Stack:</h2>**  
 - **Frontend:** HTML, CSS, JavaScript, Electron  
 - **Backend:** Spring Boot (REST API)  
-- **Database:** MySQL/PostgreSQL  
+- **Database:** MySQL
 - **API Integration:** Habitica API for enhanced tracking  
 
 **<h2>Features:</h2>**  
