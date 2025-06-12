@@ -332,3 +332,91 @@ function updateTimeOfDay() {
       window.location.href = "/index.html"; // or your login page
     }
   });
+document.addEventListener("DOMContentLoaded", () => {
+  const userIcon = document.querySelector(".fa-user-tie");
+  const modal = document.getElementById("userModal");
+  const closeBtn = document.getElementById("closeUserModal");
+
+  // Populate modal with user data
+  function fillModal(username) {
+    const user = mockUsers[username];
+    if (!user) return;
+    document.getElementById("modalUsername").textContent = username;
+    document.getElementById("modalLevel").textContent = user.level;
+    document.getElementById("modalStreak").textContent = user.streak;
+    document.getElementById("modalHighest").textContent = user.highestStreak;
+    document.getElementById("modalExp").textContent = user.exp;
+  }
+
+  // Open modal on click
+  userIcon.addEventListener("click", () => {
+    const username = localStorage.getItem("habiticaUsername");
+    if (!username) return;
+    fillModal(username);
+    modal.style.display = "flex";
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", e => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+});
+
+
+function updateStreak(habit) {
+  const today = new Date().toDateString();
+  if (habit.lastChecked === today) return; // Already checked today
+
+  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  if (habit.lastChecked === yesterday) {
+    habit.streak++;
+  } else {
+    habit.streak = 1;
+  }
+  habit.lastChecked = today;
+}
+
+function scheduleDailyReset() {
+  const now = new Date();
+  const msUntilMidnight = (
+    new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1) - now
+  );
+
+  setTimeout(() => {
+    resetHabits();  // custom reset function
+    scheduleDailyReset(); // re-schedule for tomorrow
+  }, msUntilMidnight);
+}
+
+function addExp(user, amount) {
+  user.exp += amount;
+  const levelCap = user.level * 1000;
+  if (user.exp >= levelCap) {
+    user.level++;
+    user.exp = user.exp - levelCap;
+    alert(`🎉 You leveled up to Level ${user.level}!`);
+  }
+}
+
+function exportData(data) {
+  const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "habit_data.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function importData(file) {
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    try {
+      const data = JSON.parse(event.target.result);
+      console.log("Imported data:", data);
+    } catch (e) {
+      alert("Invalid file format. Please upload a valid JSON file.");
+    }
+  };
+  reader.readAsText(file);
+}
