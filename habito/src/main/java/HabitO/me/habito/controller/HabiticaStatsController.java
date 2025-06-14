@@ -271,39 +271,5 @@ public class HabiticaStatsController {
                     .body("Error fetching tasks: " + e.getMessage());
         }
     }
-    @GetMapping("/tasks/completed")
-    public ResponseEntity<?> getCompletedTasks(HttpSession session) {
-        ResponseEntity<?> result = checkSessionAndUser(session);
-        if (!(result.getBody() instanceof User user)) return result;
-
-        String url = "https://habitica.com/api/v3/tasks/user?completed=true";
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("x-api-user", user.getHabiticaUserId());
-        headers.set("x-api-key", user.getHabiticaApiToken());
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-
-        try {
-            ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.GET, entity, Map.class);
-            List<Map<String, Object>> completedTasks = (List<Map<String, Object>>) response.getBody().get("data");
-
-            List<HabiticaTaskDTO> taskDTOs = completedTasks.stream()
-                    .map(task -> new HabiticaTaskDTO(
-                            (String) task.get("id"),
-                            (String) task.get("text"),
-                            (String) task.get("type"),
-                            Boolean.TRUE.equals(task.get("completed"))
-                    ))
-                    .toList();
-
-            return ResponseEntity.ok(taskDTOs);
-
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error fetching completed tasks: " + e.getMessage());
-        }
-    }
 }
 
