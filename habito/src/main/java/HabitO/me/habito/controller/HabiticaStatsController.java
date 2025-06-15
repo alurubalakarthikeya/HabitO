@@ -205,38 +205,6 @@ public class HabiticaStatsController {
                     .body("Error updating task: " + e.getMessage());
         }
     }
-    @GetMapping("/tasks/{taskId}")
-    public ResponseEntity<?> getTaskById(@PathVariable String taskId, HttpSession session) {
-        ResponseEntity<?> result = checkSessionAndUser(session);
-        if (!(result.getBody() instanceof User user)) return result;
-
-        String url = "https://habitica.com/api/v3/tasks/" + taskId;
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("x-api-user", user.getHabiticaUserId());
-        headers.set("x-api-key", user.getHabiticaApiToken());
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-
-        try {
-            ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.GET, entity, Map.class);
-            Map<String, Object> taskData = (Map<String, Object>) response.getBody().get("data");
-
-            HabiticaTaskDTO taskDTO = new HabiticaTaskDTO(
-                    (String) taskData.get("id"),
-                    (String) taskData.get("text"),
-                    (String) taskData.get("type"),
-                    Boolean.TRUE.equals(taskData.get("completed"))
-            );
-
-            return ResponseEntity.ok(taskDTO);
-
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error fetching task: " + e.getMessage());
-        }
-    }
     @GetMapping("/tasks")
     public ResponseEntity<?> getAllTasks(HttpSession session) {
         ResponseEntity<?> result = checkSessionAndUser(session);
