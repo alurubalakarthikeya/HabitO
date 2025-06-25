@@ -3,7 +3,7 @@
 
 **<h2>About</h2>**  
 
-HabitO is a **full-stack** habit-tracking application designed to help you **build, track, and maintain positive habits** effortlessly. With a **Dashboard** filled with multiple-habit trackers and motivation, seamless **habit management**.  (*Under Development *)
+HabitO is a **full-stack** habit-tracking application designed to help you **build, track, and maintain positive habits** effortlessly. With a **Dashboard** filled with multiple-habit trackers and motivation, seamless **habit management**.  (*Under Development*)
 
 **<h2>Tech Stack:</h2>**  
 - **Frontend:** HTML, CSS, JavaScript, Electron  
